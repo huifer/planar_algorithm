@@ -1,17 +1,13 @@
 package com.huifer.planar.aset.mappingalgo.grid;
 
-import com.huifer.planar.aset.mappingalgo.grid.lib.Convex;
-import com.huifer.planar.aset.mappingalgo.grid.lib.GeoCalc;
-import com.huifer.planar.aset.mappingalgo.grid.lib.Grid;
-import com.huifer.planar.aset.mappingalgo.grid.lib.HeightCalc;
-import com.huifer.planar.aset.mappingalgo.grid.lib.PointInfo;
-import com.huifer.planar.aset.mappingalgo.grid.lib.ResultData;
+import com.huifer.planar.aset.mappingalgo.grid.lib.*;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title : ReadHelper </p>
@@ -26,13 +22,8 @@ public class ReadHelper {
 
     private ResultData resultData;
 
-    public ResultData getResultData() {
-        return resultData;
-    }
-
-
     /**
-     * @param path 文件
+     * @param path     文件
      * @param neighbor 领域比例
      * @param interval 间距
      */
@@ -40,7 +31,6 @@ public class ReadHelper {
         List<String> textData = ReadHelper.readFileHelper(path);
         resultData = getPointList(textData, neighbor, interval);
     }
-
 
     public static void main(String[] args) {
 
@@ -55,7 +45,7 @@ public class ReadHelper {
      * 获取每一行的 点信息
      */
     private static ResultData getPointList(List<String> textData, double neighbor,
-            double interval) {
+                                           double interval) {
 
         // 数据点信息
         List<PointInfo> pointInfos = new ArrayList<>();
@@ -100,7 +90,6 @@ public class ReadHelper {
         return data;
     }
 
-
     /***
      * 读文件
      * @param path
@@ -123,6 +112,10 @@ public class ReadHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public ResultData getResultData() {
+        return resultData;
     }
 
 

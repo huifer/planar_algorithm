@@ -3,7 +3,7 @@ package com.huifer.planar.aset.mappingalgo.zongduanmian;
 import com.huifer.planar.aset.mappingalgo.zongduanmian.lib.AllData;
 import com.huifer.planar.aset.mappingalgo.zongduanmian.lib.CrossSection;
 import com.huifer.planar.aset.mappingalgo.zongduanmian.lib.HeightCal;
-import com.huifer.planar.aset.mappingalgo.zongduanmian.lib.*;
+import com.huifer.planar.aset.mappingalgo.zongduanmian.lib.PointInfo;
 import lombok.extern.slf4j.Slf4j;
 
 /**

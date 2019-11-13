@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.algo.impl.concave;
 
-import static com.huifer.planar.aset.algo.impl.concave.SimpleCutPolygon.simpleCutPolygonWithLine;
-
 import com.huifer.planar.aset.algo.impl.concave.ConcaveSplit.TroughLineWithSort;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
+
+import java.util.List;
+
+import static com.huifer.planar.aset.algo.impl.concave.SimpleCutPolygon.simpleCutPolygonWithLine;
 
 public class SimpleCutPolygonTest {
 

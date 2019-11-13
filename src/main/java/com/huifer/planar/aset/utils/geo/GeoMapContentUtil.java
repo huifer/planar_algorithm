@@ -28,9 +28,9 @@ public class GeoMapContentUtil {
     /**
      * 追加layers
      *
-     * @param content mapContent
+     * @param content  mapContent
      * @param features 要素
-     * @param style 样式
+     * @param style    样式
      */
     public static void addLayer(MapContent content, SimpleFeatureCollection features, Style style) {
         Layer layer = new FeatureLayer(features, style);
@@ -61,7 +61,7 @@ public class GeoMapContentUtil {
         // create features using the type defined
         SimpleFeatureBuilder featureBuilder = new SimpleFeatureBuilder(type);
         GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory();
-        org.locationtech.jts.geom.Point point = geometryFactory.createPoint(new Coordinate(5,5));
+        org.locationtech.jts.geom.Point point = geometryFactory.createPoint(new Coordinate(5, 5));
         featureBuilder.add(point);
         SimpleFeature feature = featureBuilder.buildFeature("FeaturePoint");
         DefaultFeatureCollection featureCollection = new DefaultFeatureCollection("internal", type);

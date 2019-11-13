@@ -1,24 +1,11 @@
 package com.huifer.planar.aset.algo.impl.concave;
 
 import com.huifer.planar.aset.utils.CommonUtils;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import lombok.*;
+import org.locationtech.jts.geom.*;
+
+import java.util.*;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : ConcaveSplit </p>
@@ -32,6 +19,7 @@ public class ConcaveSplit {
 
     /**
      * 凹多边形的凸多边形拆分
+     *
      * @param polygon 凹多边形
      * @return 拆分关键线段 {@link TroughLineWithSort}
      * @throws Exception
@@ -64,7 +52,6 @@ public class ConcaveSplit {
 //        );
 
 
-
 ////        切割凹点的最短线段 固定最后的结果线
 //        calcResultLineString(troughList, troughLineWithSorts);
 //        // 内部线段
@@ -88,10 +75,10 @@ public class ConcaveSplit {
      * 根据凹点的出现顺序，给凹点在面内的最短距离线段做打断处理
      *
      * @param troughList 凹点列表
-     * @param ts 凹点的最短距离线
+     * @param ts         凹点的最短距离线
      */
     private static void calcResultLineString(List<Point> troughList,
-            List<TroughLineWithSort> ts) {
+                                             List<TroughLineWithSort> ts) {
         // 求每一条直线的交点troughLineWithSorts
         List<Point> intersectionPoints = new ArrayList<>();
         for (int i = 0; i < ts.size(); i++) {
@@ -131,7 +118,6 @@ public class ConcaveSplit {
                 }
             }
         }
-
 
 
     }
@@ -178,7 +164,7 @@ public class ConcaveSplit {
      * 凹点长线段切割
      *
      * @param radialList {@link Radial} 过程变量
-     * @param polygon 外围面
+     * @param polygon    外围面
      * @return 面内线段
      */
     private static Set<TroughLine> keepLine(List<Radial> radialList, Polygon polygon) {
@@ -218,12 +204,12 @@ public class ConcaveSplit {
      * 保留凹点到面的切割点
      *
      * @param polygon 外围面
-     * @param ocLine 需要切割线段
-     * @param b 切割线段的方向性是否和射线段一样
+     * @param ocLine  需要切割线段
+     * @param b       切割线段的方向性是否和射线段一样
      * @param aoPoint 凹点
      */
     private static Set<TroughLine> saveLineInPolygon(Polygon polygon, LineString ocLine, boolean b,
-            Point aoPoint) {
+                                                     Point aoPoint) {
         Set<LineString> ls = new HashSet<>();
         Set<TroughLine> troughLines = new HashSet<>();
 
@@ -250,15 +236,15 @@ public class ConcaveSplit {
     /**
      * 求射线两端延长后的新线段
      *
-     * @param minX 最小x
-     * @param minY 最小y
-     * @param maxX 最大x
-     * @param maxY 最大y
+     * @param minX       最小x
+     * @param minY       最小y
+     * @param maxX       最大x
+     * @param maxY       最大y
      * @param radialList 直线方程组
      * @return 新线段
      */
     private static List<LineString> calcNewLine(double minX, double minY, double maxX, double maxY,
-            List<Radial> radialList) {
+                                                List<Radial> radialList) {
 
         List<LineString> result = new ArrayList<>();
         for (int i = 0; i < radialList.size(); i++) {
@@ -271,8 +257,8 @@ public class ConcaveSplit {
                 // 平行Y轴
 //                System.out.println("平行Y轴");
                 LineString lineString = new GeometryFactory().createLineString(new Coordinate[]{
-                        new Coordinate( radial.endPoint.getX(),minY),
-                        new Coordinate( radial.endPoint.getX(),maxY)
+                        new Coordinate(radial.endPoint.getX(), minY),
+                        new Coordinate(radial.endPoint.getX(), maxY)
                 });
                 radial.setLongLine(lineString);
                 result.add(lineString);
@@ -296,15 +282,15 @@ public class ConcaveSplit {
     /**
      * 计算线段值
      *
-     * @param minX 面的最小x
-     * @param maxX 面的最大x
+     * @param minX   面的最小x
+     * @param maxX   面的最大x
      * @param result 结果
      * @param radial {@link Radial }
-     * @param sy 起点y
-     * @param ey 终点Y
+     * @param sy     起点y
+     * @param ey     终点Y
      */
     private static void calcLine(double minX, double maxX, List<LineString> result, Radial radial,
-            double sy, double ey) {
+                                 double sy, double ey) {
         LineString lineString = new GeometryFactory().createLineString(new Coordinate[]{
                 new Coordinate(minX, sy),
                 new Coordinate(maxX, ey)
@@ -318,7 +304,7 @@ public class ConcaveSplit {
     /**
      * 计算所有射线 , 此处不考虑打断问题 ， 直接绘制所有射线
      *
-     * @param cs polygon的点
+     * @param cs         polygon的点
      * @param troughList 凹点集合
      * @return {@link Radial} 射线列表
      */
@@ -359,7 +345,7 @@ public class ConcaveSplit {
     @NoArgsConstructor
     @AllArgsConstructor
     @EqualsAndHashCode
-   public static class TroughLineWithSort {
+    public static class TroughLineWithSort {
 
         /**
          * 凹点

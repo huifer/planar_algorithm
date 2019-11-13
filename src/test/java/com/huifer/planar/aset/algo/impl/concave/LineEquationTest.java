@@ -10,7 +10,7 @@ public class LineEquationTest {
 
 
     @Test
-    public void testCalcXY(){
+    public void testCalcXY() {
 
 //        POINT (88066.9358577728 73719.719751358)	POINT (88066.9358577728 73720.719751358)
 //        POINT (88064.0209026337 73719.926618576)	POINT (88065.280916214 73720.9421520233)
@@ -21,8 +21,8 @@ public class LineEquationTest {
 //        73719.6257190704
 //        88068.1958713531
 //        73722.1269397736
-        Point start =  new GeometryFactory().createPoint(new Coordinate(88064.0209026337 ,73719.926618576));
-        Point end = new GeometryFactory().createPoint(new Coordinate(88065.280916214 ,73720.9421520233));
+        Point start = new GeometryFactory().createPoint(new Coordinate(88064.0209026337, 73719.926618576));
+        Point end = new GeometryFactory().createPoint(new Coordinate(88065.280916214, 73720.9421520233));
         Radial radial = new Radial(start, end);
 //        double y = radial.calcY(88064.123424185);
         double A = end.getY() - start.getY();
@@ -41,7 +41,6 @@ public class LineEquationTest {
         System.out.println(v);
 
     }
-
 
 
 }

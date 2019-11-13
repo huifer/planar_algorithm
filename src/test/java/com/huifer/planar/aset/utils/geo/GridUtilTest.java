@@ -2,8 +2,6 @@ package com.huifer.planar.aset.utils.geo;
 
 import com.huifer.planar.aset.entity.FourBox;
 import com.huifer.planar.aset.utils.TmeanLength;
-import java.util.Arrays;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureIterator;
@@ -20,6 +18,9 @@ import org.junit.runner.RunWith;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
 import org.opengis.feature.simple.SimpleFeature;
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 @RunWith(Enclosed.class)
 @Slf4j

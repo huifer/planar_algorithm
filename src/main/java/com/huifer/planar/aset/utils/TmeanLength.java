@@ -2,17 +2,14 @@ package com.huifer.planar.aset.utils;
 
 import com.huifer.planar.aset.entity.FourBox;
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
+import org.geotools.geometry.jts.JTSFactoryFinder;
+import org.locationtech.jts.geom.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.geotools.geometry.jts.JTSFactoryFinder;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : TmeanLength </p>

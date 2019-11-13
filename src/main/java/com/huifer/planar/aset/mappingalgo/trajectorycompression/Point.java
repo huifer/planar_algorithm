@@ -13,6 +13,12 @@ public class Point {
     private double x;
     private double y;
 
+    public Point(Double id, double x, double y) {
+        this.id = id;
+        this.x = x;
+        this.y = y;
+    }
+
     @Override
     public String toString() {
         return "Point{" +
@@ -22,18 +28,12 @@ public class Point {
                 '}';
     }
 
-    public void setId(double id) {
-        this.id = id;
-    }
-
-    public Point(Double id, double x, double y) {
-        this.id = id;
-        this.x = x;
-        this.y = y;
-    }
-
     public double getId() {
         return id;
+    }
+
+    public void setId(double id) {
+        this.id = id;
     }
 
     public double getX() {

@@ -8,7 +8,8 @@ import java.util.Vector;
 /**
  * <p>Title : SimpleCycles </p>
  * <p>Description : 简单闭环</p>
- *  <p>https://en.wikipedia.org/wiki/Johnson%27s_algorithm</p>
+ * <p>https://en.wikipedia.org/wiki/Johnson%27s_algorithm</p>
+ *
  * @author huifer
  * @date 2019-03-07
  */
@@ -214,7 +215,7 @@ public class SimpleCycles {
 
     /**
      * 用于搜索连接图的工具
-     *
+     * <p>
      * {节点0 ,节点0+1 , 节点0+2}
      *
      * @param node 节点0

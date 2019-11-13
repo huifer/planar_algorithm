@@ -1,17 +1,12 @@
 package com.huifer.planar.aset.utils;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
-import java.util.Stack;
-import java.util.Vector;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
+
+import java.util.*;
 
 
 /**
@@ -91,11 +86,11 @@ public class AdjacentMatrixUtil {
      * 邻接矩阵构造器
      *
      * @param points 点列表
-     * @param lines 连接线列表
+     * @param lines  连接线列表
      * @return 邻接矩阵
      */
     public static List<List<Integer>> createAdjacentMatrix(List<Point> points,
-            List<LineString> lines) {
+                                                           List<LineString> lines) {
 
         int n = points.size();
         List<List<Integer>> matrix = new ArrayList<>(n);
@@ -123,7 +118,7 @@ public class AdjacentMatrixUtil {
 
 
     public static List<List<Boolean>> createAdjacentMatrixBoolean(List<Point> points,
-            List<LineString> lines) {
+                                                                  List<LineString> lines) {
         int n = points.size();
         List<List<Boolean>> matrix = new ArrayList<>(n);
 
@@ -151,7 +146,7 @@ public class AdjacentMatrixUtil {
      * 搜索当前点
      *
      * @param points 点集合
-     * @param find 需要寻找的点
+     * @param find   需要寻找的点
      * @return 寻找点的索引
      */
     private static int queryIndex(List<Point> points, Point find) {
@@ -211,7 +206,7 @@ public class AdjacentMatrixUtil {
          * 判断这个路径是否在结果集合中
          *
          * @param nodeList 已有结果
-         * @param edge 路径边
+         * @param edge     路径边
          * @return yes/no
          */
         private static boolean inResult(List<List> nodeList, List edge) {

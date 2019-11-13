@@ -1,8 +1,9 @@
 package com.huifer.planar.aset.mappingalgo.trajectorycompression;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title : DpLine </p>
@@ -23,7 +24,7 @@ public class DpLine {
         DpLine dPline = new DpLine();
         List<Point> dp = dPline.dp(pointList, 0.001);
 //        System.out.println(dp);
-        log.info("dp = {}",dp);
+        log.info("dp = {}", dp);
     }
 
 
@@ -58,13 +59,13 @@ public class DpLine {
     /**
      * dp压缩路径主算法
      *
-     * @param points 点集合
+     * @param points     点集合
      * @param firstPoint 第一个点
-     * @param lastPoint 最后一个点
-     * @param tolerance 误差值
+     * @param lastPoint  最后一个点
+     * @param tolerance  误差值
      */
     private void douglasPeuckerReduction(List<Point> points, int firstPoint, int lastPoint,
-            double tolerance) {
+                                         double tolerance) {
         double maxDistance = 0.0;
         int indexFarthest = 0;
 
@@ -92,7 +93,7 @@ public class DpLine {
      *
      * @param point1 Point
      * @param point2 Point
-     * @param point Point
+     * @param point  Point
      * @return length
      */
     private Double height(Point point1, Point point2, Point point) {

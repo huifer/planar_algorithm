@@ -6,12 +6,13 @@ import com.huifer.planar.aset.entity.MyLine;
 import com.huifer.planar.aset.entity.MyPoint;
 import com.huifer.planar.aset.entity.OvlayerEnum;
 import com.huifer.planar.aset.entity.SortPoint;
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title : LineOverCore </p>
@@ -53,7 +54,7 @@ public class LineOverCore implements LineOverInterface {
 
     @Override
     public final Map<String, List<SortPoint>> simpleLineSortPoint(MyLine line,
-            ArrayList<MyPoint> points) {
+                                                                  ArrayList<MyPoint> points) {
 
         GraphInterface g = new GraphCore();
         ArrayList<SortPoint> sortPoints = new ArrayList<>();

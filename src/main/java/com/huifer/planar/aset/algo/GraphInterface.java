@@ -18,7 +18,7 @@ public interface GraphInterface {
     /**
      * 右手法则计算 线与点的关系
      *
-     * @param point point
+     * @param point    point
      * @param polyline polyline
      * @return {@link com.huifer.planar.aset.entity.OvlayerEnum}
      */
@@ -36,7 +36,7 @@ public interface GraphInterface {
     /**
      * 点和面的关系
      *
-     * @param point point
+     * @param point   point
      * @param polygon polygon
      * @return {@link com.huifer.planar.aset.entity.OvlayerEnum}
      */

@@ -1,2 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<metadata xml:lang="zh"><Esri><CreaDate>20190225</CreaDate><CreaTime>15113700</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce><DataProperties><lineage><Process ToolSource="d:\program files (x86)\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190225" Time="151137">CalculateField 555555 split 2 VB #</Process><Process ToolSource="d:\program files (x86)\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField" Date="20190225" Time="151250">CalculateField 555555 split "" VB #</Process></lineage></DataProperties></Esri></metadata>
+<metadata xml:lang="zh">
+  <Esri>
+    <CreaDate>20190225</CreaDate>
+    <CreaTime>15113700</CreaTime>
+    <ArcGISFormat>1.0</ArcGISFormat>
+    <SyncOnce>TRUE</SyncOnce>
+    <DataProperties>
+      <lineage>
+        <Process
+            ToolSource="d:\program files (x86)\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField"
+            Date="20190225" Time="151137">CalculateField 555555 split 2 VB #
+        </Process>
+        <Process
+            ToolSource="d:\program files (x86)\arcgis\desktop10.6\ArcToolbox\Toolboxes\Data Management Tools.tbx\CalculateField"
+            Date="20190225" Time="151250">CalculateField 555555 split "" VB #
+        </Process>
+      </lineage>
+    </DataProperties>
+  </Esri>
+</metadata>

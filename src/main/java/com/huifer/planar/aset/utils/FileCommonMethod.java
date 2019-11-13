@@ -1,14 +1,9 @@
 package com.huifer.planar.aset.utils;
 
 import com.csvreader.CsvWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+
+import java.io.*;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,7 +36,7 @@ public class FileCommonMethod {
      * 当前项目路径下的 xxx
      *
      * @param fileParent 当前项目路径下，文件前面的路径
-     * @param fileName 当前项目路径下 + 文件前面路径 + 文件名
+     * @param fileName   当前项目路径下 + 文件前面路径 + 文件名
      * @return 完整路径
      */
     public static String getProjectPath(String fileParent, String fileName) {
@@ -98,7 +93,7 @@ public class FileCommonMethod {
      * @return 路径
      */
     public static String getClassFilePathByClass(Class<? extends Object> getclass,
-            String fileName) {
+                                                 String fileName) {
         String path = null;
         try {
             if (getclass != null) {
@@ -189,12 +184,12 @@ public class FileCommonMethod {
     /**
      * 根据类加载器获取项目根路径
      *
-     * @param getclass class
+     * @param getclass    class
      * @param projectName 项目名称
      * @return 路径
      */
     public static String getRootPathByClassLoader(Class<? extends Object> getclass,
-            String projectName) {
+                                                  String projectName) {
         String path = null;
         try {
             if (getclass != null) {
@@ -239,7 +234,7 @@ public class FileCommonMethod {
      * @return 路径
      */
     public static String getClassFilePathByClassLoader(Class<? extends Object> getclass,
-            String fileName) {
+                                                       String fileName) {
         String path = null;
         try {
             if (getclass != null) {
@@ -269,8 +264,8 @@ public class FileCommonMethod {
      * 文件追加内容
      *
      * @param filePath 文件位置
-     * @param content 内容
-     * @param isClean 是否清空
+     * @param content  内容
+     * @param isClean  是否清空
      */
     public static void fileAdd(String filePath, String content, boolean isClean) {
         FileWriter fileWriter = null;

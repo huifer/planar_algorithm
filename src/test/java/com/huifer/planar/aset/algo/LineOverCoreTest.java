@@ -5,12 +5,13 @@ import com.huifer.planar.aset.algo.impl.ovlayer.LineOverCore;
 import com.huifer.planar.aset.entity.MyLine;
 import com.huifer.planar.aset.entity.MyPoint;
 import com.huifer.planar.aset.entity.SortPoint;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.Test;
 
 @Slf4j
 public class LineOverCoreTest {

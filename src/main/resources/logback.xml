@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-  <property name="DEV_HOME" value="log" />
+  <property name="DEV_HOME" value="log"/>
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <layout class="ch.qos.logback.classic.PatternLayout">
@@ -12,7 +12,7 @@
   </appender>
 
   <appender name="FILE-AUDIT"
-    class="ch.qos.logback.core.rolling.RollingFileAppender">
+            class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${DEV_HOME}/debug.log</file>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <Pattern>
@@ -24,7 +24,7 @@
       <fileNamePattern>${DEV_HOME}/archived/debug.%d{yyyy-MM-dd}.%i.log
       </fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>10MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
     </rollingPolicy>
@@ -32,7 +32,7 @@
   </appender>
 
   <appender name="FILE-ERROR"
-    class="ch.qos.logback.core.rolling.RollingFileAppender">
+            class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${DEV_HOME}/error.log</file>
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
       <Pattern>
@@ -44,7 +44,7 @@
       <fileNamePattern>${DEV_HOME}/archived/error.%d{yyyy-MM-dd}.%i.log
       </fileNamePattern>
       <timeBasedFileNamingAndTriggeringPolicy
-        class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+          class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
         <maxFileSize>10MB</maxFileSize>
       </timeBasedFileNamingAndTriggeringPolicy>
     </rollingPolicy>
@@ -52,13 +52,13 @@
   </appender>
 
   <logger name="com.huifer.planar.aset" level="debug"
-    additivity="false">
-    <appender-ref ref="FILE-AUDIT" />
-    <appender-ref ref="STDOUT" />
+          additivity="false">
+    <appender-ref ref="FILE-AUDIT"/>
+    <appender-ref ref="STDOUT"/>
   </logger>
 
   <root level="error">
-    <appender-ref ref="FILE-ERROR" />
+    <appender-ref ref="FILE-ERROR"/>
   </root>
 
 </configuration>

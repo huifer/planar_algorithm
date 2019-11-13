@@ -7,6 +7,7 @@ public class AverageWidthAverageLengthImplTest {
 
 
     private AverageWidthAverageLength averageWidthAverageLength = new AverageWidthAverageLengthImpl();
+
     @Test
     public void calcAverageWidth() {
         String polygon = "POLYGON((0 0, 10 20, 20 20, 10 0, 0 0))";

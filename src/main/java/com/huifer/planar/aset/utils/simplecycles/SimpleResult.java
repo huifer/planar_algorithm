@@ -1,10 +1,11 @@
 package com.huifer.planar.aset.utils.simplecycles;
 
+import lombok.Data;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Vector;
-import lombok.Data;
 
 /**
  * <p>Title : SimpleResult </p>

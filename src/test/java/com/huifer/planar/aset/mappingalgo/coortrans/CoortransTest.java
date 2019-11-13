@@ -1,10 +1,6 @@
 package com.huifer.planar.aset.mappingalgo.coortrans;
 
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.AllData;
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.Gauss;
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.PointInfo;
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.Position;
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.Rad2Dms;
+import com.huifer.planar.aset.mappingalgo.coortrans.lib.*;
 import org.junit.Test;
 
 /**
@@ -12,8 +8,26 @@ import org.junit.Test;
  */
 public class CoortransTest {
 
+    private static void printdata(AllData allData) {
+        allData.data.stream().forEach(
+                so -> {
+                    System.out.println(so);
+                }
+        );
+    }
+
+    private static void bl2Xy(AllData allData) {
+        // 高斯正算
+        for (PointInfo pointInfo : allData.data) {
+            String name = pointInfo.name;
+            String x = Rad2Dms.rad2Str(pointInfo.b);
+            String y = Rad2Dms.rad2Str(pointInfo.l);
+            System.out.println(name + " | " + x + " | " + y);
+        }
+    }
+
     @Test
-    public void coortransTest(){
+    public void coortransTest() {
         ReadHelper readHelper = new ReadHelper(
                 "E:\\mck\\planar_algorithm\\src\\main\\java\\com\\huifer\\planar\\aset\\mappingalgo\\coortrans\\坐标数据.txt");
         AllData allData = readHelper.getData();
@@ -47,24 +61,5 @@ public class CoortransTest {
         System.out.println("============= 大地坐标转高斯 =============");
         printdata(allData);
 
-    }
-
-
-    private static void printdata(AllData allData) {
-        allData.data.stream().forEach(
-                so -> {
-                    System.out.println(so);
-                }
-        );
-    }
-
-    private static void bl2Xy(AllData allData) {
-        // 高斯正算
-        for (PointInfo pointInfo : allData.data) {
-            String name = pointInfo.name;
-            String x = Rad2Dms.rad2Str(pointInfo.b);
-            String y = Rad2Dms.rad2Str(pointInfo.l);
-            System.out.println(name + " | " + x + " | " + y);
-        }
     }
 }

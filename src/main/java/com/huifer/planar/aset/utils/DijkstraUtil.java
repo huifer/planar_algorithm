@@ -1,6 +1,8 @@
 package com.huifer.planar.aset.utils;
 
-import com.huifer.planar.aset.entity.*;
+import com.huifer.planar.aset.entity.MyLine;
+import com.huifer.planar.aset.entity.MyPoint;
+
 import java.util.ArrayList;
 
 /**
@@ -16,7 +18,7 @@ public class DijkstraUtil {
     /**
      * 构造邻接矩阵
      *
-     * @param points 点集合
+     * @param points    点集合
      * @param polylines 线集合
      * @return 邻接矩阵
      */
@@ -49,7 +51,7 @@ public class DijkstraUtil {
     /**
      * 查找索引
      *
-     * @param points 点集合
+     * @param points      点集合
      * @param targetPoint 查询点
      * @return 索引值
      */

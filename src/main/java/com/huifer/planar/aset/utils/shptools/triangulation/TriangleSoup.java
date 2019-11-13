@@ -24,8 +24,7 @@ class TriangleSoup {
     /**
      * Adds a triangle to this triangle soup.
      *
-     * @param triangle
-     *            The triangle to be added to this triangle soup
+     * @param triangle The triangle to be added to this triangle soup
      */
     public void add(Triangle2D triangle) {
         this.triangleSoup.add(triangle);
@@ -34,8 +33,7 @@ class TriangleSoup {
     /**
      * Removes a triangle from this triangle soup.
      *
-     * @param triangle
-     *            The triangle to be removed from this triangle soup
+     * @param triangle The triangle to be removed from this triangle soup
      */
     public void remove(Triangle2D triangle) {
         this.triangleSoup.remove(triangle);
@@ -54,10 +52,9 @@ class TriangleSoup {
      * Returns the triangle from this triangle soup that contains the specified
      * point or null if no triangle from the triangle soup contains the point.
      *
-     * @param point
-     *            The point
+     * @param point The point
      * @return Returns the triangle from this triangle soup that contains the
-     *         specified point or null
+     * specified point or null
      */
     public Triangle2D findContainingTriangle(Vector2D point) {
         for (Triangle2D triangle : triangleSoup) {
@@ -73,12 +70,10 @@ class TriangleSoup {
      * edge as specified. If no neighbor sharing the same edge exists null is
      * returned.
      *
-     * @param triangle
-     *            The triangle
-     * @param edge
-     *            The edge
+     * @param triangle The triangle
+     * @param edge     The edge
      * @return The triangles neighbor triangle sharing the same edge or null if
-     *         no triangle exists
+     * no triangle exists
      */
     public Triangle2D findNeighbour(Triangle2D triangle, Edge2D edge) {
         for (Triangle2D triangleFromSoup : triangleSoup) {
@@ -95,8 +90,7 @@ class TriangleSoup {
      * triangle may differ. To find the other triangle that shares this edge use
      * the {@link findNeighbour( Triangle2D triangle, Edge2D edge)} method.
      *
-     * @param edge
-     *            The edge
+     * @param edge The edge
      * @return Returns one triangle that shares the specified edge
      */
     public Triangle2D findOneTriangleSharing(Edge2D edge) {
@@ -111,8 +105,7 @@ class TriangleSoup {
     /**
      * Returns the edge from the triangle soup nearest to the specified point.
      *
-     * @param point
-     *            The point
+     * @param point The point
      * @return The edge from the triangle soup nearest to the specified point
      */
     public Edge2D findNearestEdge(Vector2D point) {
@@ -133,8 +126,7 @@ class TriangleSoup {
      * Removes all triangles from this triangle soup that contain the specified
      * vertex.
      *
-     * @param vertex
-     *            The vertex
+     * @param vertex The vertex
      */
     public void removeTrianglesUsing(Vector2D vertex) {
         List<Triangle2D> trianglesToBeRemoved = new ArrayList<Triangle2D>();

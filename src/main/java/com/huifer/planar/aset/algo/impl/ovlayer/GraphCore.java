@@ -3,8 +3,11 @@ package com.huifer.planar.aset.algo.impl.ovlayer;
 import com.huifer.planar.aset.algo.GraphInterface;
 import com.huifer.planar.aset.algo.MatirxInterface;
 import com.huifer.planar.aset.algo.impl.MatirxCore;
-import com.huifer.planar.aset.entity.*;
+import com.huifer.planar.aset.entity.MyLine;
+import com.huifer.planar.aset.entity.MyPoint;
+import com.huifer.planar.aset.entity.MyPolygon;
 import com.huifer.planar.aset.entity.OvlayerEnum;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -26,7 +29,7 @@ public class GraphCore implements GraphInterface {
     /**
      * 右手法则判断关系 1. 在线上 2. 在线段延长线上 3. 在线段右侧 4. 在线段左侧
      *
-     * @param point 判断点
+     * @param point    判断点
      * @param polyline 判断线段
      */
     @Override

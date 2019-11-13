@@ -1,6 +1,5 @@
 package com.huifer.planar.aset.utils.geo;
 
-import java.io.IOException;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.geometry.jts.ReferencedEnvelope;
@@ -8,6 +7,8 @@ import org.geotools.grid.DefaultGridFeatureBuilder;
 import org.geotools.grid.GridFeatureBuilder;
 import org.geotools.grid.Grids;
 import org.geotools.grid.oblong.Oblongs;
+
+import java.io.IOException;
 
 /**
  * <p>Title : GridUtil </p>
@@ -22,7 +23,7 @@ public class GridUtil {
      * 构造网格图
      *
      * @param source 数据
-     * @param size 生成数量
+     * @param size   生成数量
      * @return {@link SimpleFeatureCollection}
      */
     public static SimpleFeatureCollection createGrids(SimpleFeatureSource source, int size) {
@@ -45,7 +46,7 @@ public class GridUtil {
      * 指定边界生成网格
      *
      * @param gridBounds 边框
-     * @param size 生成数量
+     * @param size       生成数量
      * @return {@link SimpleFeatureCollection}
      */
     public static SimpleFeatureCollection createGrids(ReferencedEnvelope gridBounds, int size) {
@@ -66,12 +67,12 @@ public class GridUtil {
      * 指定边界指定行列数量 生成网格
      *
      * @param gridBounds 边界
-     * @param hSize 高  几个网格
-     * @param wSize 宽 几个网格
+     * @param hSize      高  几个网格
+     * @param wSize      宽 几个网格
      * @return {@link SimpleFeatureCollection}
      */
     public static SimpleFeatureCollection createGrids(ReferencedEnvelope gridBounds, int hSize,
-            int wSize) {
+                                                      int wSize) {
         SimpleFeatureCollection gridFeature = null;
         try {
             double gridWidth = (gridBounds.getMaxX() - gridBounds.getMinX()) / wSize;
@@ -91,13 +92,13 @@ public class GridUtil {
     /**
      * 指定边界指定行列数量 生成网格
      *
-     * @param hSize 高  几个网格
-     * @param wSize 宽 几个网格
+     * @param hSize      高  几个网格
+     * @param wSize      宽 几个网格
      * @param gridBounds 边界
      * @return {@link SimpleFeatureCollection}
      */
     public static SimpleFeatureCollection createGrids(int hSize, int wSize,
-            ReferencedEnvelope gridBounds) {
+                                                      ReferencedEnvelope gridBounds) {
         SimpleFeatureCollection gridFeature = null;
         try {
             double gridWidth = (gridBounds.getMaxX() - gridBounds.getMinX()) / wSize;
@@ -118,13 +119,13 @@ public class GridUtil {
     /**
      * 根据边界生成网格
      *
-     * @param hSize 高  几个网格
-     * @param wSize 宽 几个网格
+     * @param hSize      高  几个网格
+     * @param wSize      宽 几个网格
      * @param gridBounds 边界
      * @return {@link SimpleFeatureSource}
      */
     public static SimpleFeatureSource getSimpleFeatureByCreateGrids(int hSize, int wSize,
-            ReferencedEnvelope gridBounds) {
+                                                                    ReferencedEnvelope gridBounds) {
         SimpleFeatureSource grid = null;
         try {
             double gridWidth = (gridBounds.getMaxX() - gridBounds.getMinX()) / wSize;

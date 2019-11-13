@@ -1,12 +1,9 @@
 package com.huifer.planar.aset.algo.impl.polygon;
 
-import java.util.List;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LinearRing;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.WKTReader;
+
+import java.util.List;
 
 /**
  * <p>Title : PolygonSegmentationCore </p>

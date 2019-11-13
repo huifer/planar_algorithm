@@ -5,9 +5,11 @@ import com.huifer.planar.aset.algo.impl.polygon.RailCore;
 import com.huifer.planar.aset.entity.MyLine;
 import com.huifer.planar.aset.entity.MyPoint;
 import com.huifer.planar.aset.entity.MyPolygon;
-import java.util.ArrayList;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+
+import java.util.ArrayList;
+
 @Slf4j
 public class RailCoreTest {
 

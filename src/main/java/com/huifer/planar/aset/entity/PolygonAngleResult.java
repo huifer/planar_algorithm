@@ -1,14 +1,13 @@
 package com.huifer.planar.aset.entity;
 
 import com.huifer.planar.aset.algo.impl.polygon.PolygonAngleCore.PointF;
-
-import java.util.HashMap;
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.locationtech.jts.geom.Polygon;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>Title : PolygonAngleResult </p>

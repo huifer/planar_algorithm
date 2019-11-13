@@ -2,13 +2,14 @@ package com.huifer.planar.aset.utils.shptools.polygontools.geometry;
 
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
 import com.huifer.planar.aset.utils.shptools.polygontools.entity.LatLngEntity;
+import org.locationtech.jts.geom.Coordinate;
+import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.io.ParseException;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.ParseException;
 
 
 /**
@@ -63,6 +64,7 @@ public class ConvexHull {
 
     /**
      * 列表对象排序
+     *
      * @param al 点集
      * @return 排序后结果
      */

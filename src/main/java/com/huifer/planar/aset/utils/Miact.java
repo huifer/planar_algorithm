@@ -1,8 +1,9 @@
 package com.huifer.planar.aset.utils;
 
-import java.util.ArrayList;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
+
+import java.util.ArrayList;
 
 /**
  * <p>Title : Miact </p>
@@ -16,7 +17,7 @@ public class Miact {
     /**
      * 构造邻接矩阵
      *
-     * @param points 点集合
+     * @param points    点集合
      * @param polylines 线集合
      * @return 邻接矩阵
      */
@@ -48,7 +49,7 @@ public class Miact {
     /**
      * 查找索引
      *
-     * @param points 点集合
+     * @param points      点集合
      * @param targetPoint 查询点
      * @return 索引值
      */
@@ -56,7 +57,7 @@ public class Miact {
         int index = 0;
         for (int i = 0; i < points.size(); i++) {
             Point point = points.get(i);
-            if (point.equals(targetPoint) ) {
+            if (point.equals(targetPoint)) {
                 index = i;
             }
         }

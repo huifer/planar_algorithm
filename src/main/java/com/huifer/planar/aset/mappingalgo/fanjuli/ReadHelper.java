@@ -24,11 +24,6 @@ public class ReadHelper {
         this.points = getPointList(textData);
     }
 
-
-    public List<MyPoint> getPoints() {
-        return points;
-    }
-
     public static void main(String[] args) {
 
         ReadHelper readHelper = new ReadHelper(
@@ -55,7 +50,6 @@ public class ReadHelper {
         return points;
     }
 
-
     /***
      * 读文件
      * @param path
@@ -78,6 +72,10 @@ public class ReadHelper {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public List<MyPoint> getPoints() {
+        return points;
     }
 
 

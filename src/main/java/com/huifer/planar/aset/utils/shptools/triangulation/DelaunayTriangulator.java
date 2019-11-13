@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.utils.shptools.triangulation;
 
-import static com.huifer.planar.aset.utils.shptools.triangulation.FileRd.readTxtFile;
-
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
+import org.locationtech.jts.geom.Polygon;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import org.locationtech.jts.geom.Polygon;
+
+import static com.huifer.planar.aset.utils.shptools.triangulation.FileRd.readTxtFile;
 
 /**
  * A Java implementation of an incremental 2D Delaunay triangulation algorithm.
@@ -16,7 +17,21 @@ import org.locationtech.jts.geom.Polygon;
 public class DelaunayTriangulator {
 
 
-    public static void main(String[] args) throws  Exception{
+    private List<Vector2D> pointSet;
+    private TriangleSoup triangleSoup;
+    /**
+     * Constructor of the SimpleDelaunayTriangulator class used to create a new
+     * triangulator instance.
+     *
+     * @param pointSet The point set to be triangulated
+     * @throws NotEnoughPointsException Thrown when the point set contains less than three points
+     */
+    public DelaunayTriangulator(List<Vector2D> pointSet) {
+        this.pointSet = pointSet;
+        this.triangleSoup = new TriangleSoup();
+    }
+
+    public static void main(String[] args) throws Exception {
 
 //        List<Vector2D> pointSet = new ArrayList<>();
 //
@@ -51,7 +66,7 @@ public class DelaunayTriangulator {
 
         Operation op = new Operation();
         triangles.forEach(
-                s->{
+                s -> {
                     Polygon triangle = op.createTriangle(s.a, s.b, s.c);
                     System.out.println(triangle);
 
@@ -59,21 +74,6 @@ public class DelaunayTriangulator {
         );
 
 
-    }
-
-    private List<Vector2D> pointSet;
-    private TriangleSoup triangleSoup;
-
-    /**
-     * Constructor of the SimpleDelaunayTriangulator class used to create a new
-     * triangulator instance.
-     *
-     * @param pointSet The point set to be triangulated
-     * @throws NotEnoughPointsException Thrown when the point set contains less than three points
-     */
-    public DelaunayTriangulator(List<Vector2D> pointSet) {
-        this.pointSet = pointSet;
-        this.triangleSoup = new TriangleSoup();
     }
 
     /**

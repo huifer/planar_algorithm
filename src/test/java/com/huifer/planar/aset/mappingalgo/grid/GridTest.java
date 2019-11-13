@@ -5,7 +5,6 @@ import org.junit.Test;
 public class GridTest {
 
 
-
     @Test
     public void gridTest() {
         ReadHelper.main(new String[]{""});

@@ -13,15 +13,6 @@ import java.util.List;
 public class CrossSection {
 
     /**
-     * 起点
-     */
-    private PointInfo startPoint;
-    /***
-     * 终点
-     */
-    private PointInfo endPoint;
-
-    /**
      * 关键点
      */
     public PointInfo kPoint;
@@ -29,11 +20,22 @@ public class CrossSection {
      * 当前所有点
      */
     public List<PointInfo> crossPoint;
-
     /**
      * 方向角
      */
     public double direction;
+    /**
+     * 面积
+     */
+    public double area;
+    /**
+     * 起点
+     */
+    private PointInfo startPoint;
+    /***
+     * 终点
+     */
+    private PointInfo endPoint;
     /**
      * 间隔
      */
@@ -42,10 +44,6 @@ public class CrossSection {
      * 宽度
      */
     private double width;
-    /**
-     * 面积
-     */
-    public double area;
 
     public CrossSection(PointInfo startPoint, PointInfo endPoint, double direction) {
         // 题目中的值
@@ -60,6 +58,7 @@ public class CrossSection {
 
     /**
      * 所有计算汇总
+     *
      * @param cal
      * @param h0
      */

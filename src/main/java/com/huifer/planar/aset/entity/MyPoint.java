@@ -1,11 +1,11 @@
 package com.huifer.planar.aset.entity;
 
-import static java.lang.Double.max;
-import static java.lang.Double.min;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import static java.lang.Double.max;
+import static java.lang.Double.min;
 
 /**
  * 描述： 点

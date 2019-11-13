@@ -1,9 +1,11 @@
 package com.huifer.planar.aset.algo;
 
-import com.huifer.planar.aset.entity.*;
+import com.huifer.planar.aset.entity.MyPoint;
+import com.huifer.planar.aset.entity.MyPolygon;
 
 /**
  * RailInterface
+ *
  * @author huifer
  */
 public interface RailInterface {
@@ -11,7 +13,7 @@ public interface RailInterface {
     /**
      * 点是否在在面内
      *
-     * @param point point
+     * @param point   point
      * @param polygon polygon
      * @return boolean
      */

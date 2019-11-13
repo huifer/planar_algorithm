@@ -1,16 +1,12 @@
 package com.huifer.planar.aset.view.base;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Image;
-import java.awt.RenderingHints;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Line2D;
 import java.awt.geom.Path2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
-import javax.swing.ImageIcon;
 
 /**
  * <p>Title : ViewHelper </p>
@@ -97,7 +93,7 @@ public class ViewHelper {
     /**
      * 画线
      *
-     * @param g Graphics2D
+     * @param g  Graphics2D
      * @param x1 x1
      * @param y1 y1
      * @param x2 x2
@@ -168,7 +164,7 @@ public class ViewHelper {
     /**
      * 设置颜色
      *
-     * @param g Graphics2D
+     * @param g     Graphics2D
      * @param color 颜色
      */
     public static void setColor(Graphics2D g, Color color) {
@@ -189,9 +185,9 @@ public class ViewHelper {
     /**
      * 显示图
      *
-     * @param g Graphics2D
-     * @param x x
-     * @param y y
+     * @param g        Graphics2D
+     * @param x        x
+     * @param y        y
      * @param imageURL 图片地址
      */
     public static void putImage(Graphics2D g, int x, int y, String imageURL) {
@@ -205,8 +201,8 @@ public class ViewHelper {
     /**
      * 显示文字
      *
-     * @param g Graphics2D
-     * @param text 文字
+     * @param g       Graphics2D
+     * @param text    文字
      * @param centerx centerx
      * @param centery centery
      */

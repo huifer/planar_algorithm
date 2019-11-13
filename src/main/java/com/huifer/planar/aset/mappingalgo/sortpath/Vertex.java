@@ -12,7 +12,7 @@ import java.util.Objects;
 public class Vertex {
 
     public String name;
-    public double weight =100000;
+    public double weight = 100000;
 
 
     public Vertex(String newName) {

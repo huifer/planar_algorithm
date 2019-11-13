@@ -3,8 +3,8 @@ package com.huifer.planar.aset.view;
 import com.huifer.planar.aset.view.base.BaseFrame;
 import com.huifer.planar.aset.view.base.FrameContext;
 import com.huifer.planar.aset.view.base.ViewHelper;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+
+import java.awt.*;
 import java.util.Random;
 
 /**

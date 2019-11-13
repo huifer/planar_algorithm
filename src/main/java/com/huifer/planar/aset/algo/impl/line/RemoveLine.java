@@ -1,14 +1,10 @@
 package com.huifer.planar.aset.algo.impl.line;
 
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.operation.valid.IsValidOp;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.LinearRing;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.operation.valid.IsValidOp;
 
 /**
  * <p>Title : RemoveLine </p>
@@ -25,7 +21,7 @@ public class RemoveLine {
      * 根据容差删除线段节点
      *
      * @param line 线段
-     * @param tol 容差
+     * @param tol  容差
      * @return 删除后结果
      */
     private static List<LineEdge> getShort(LineString line, double tol) {
@@ -44,7 +40,7 @@ public class RemoveLine {
      * 删除面上小于容差的节点
      *
      * @param poly 面
-     * @param tol 容差
+     * @param tol  容差
      * @return 删除后结果
      */
     private static List<PolygonEdge> getShort(Polygon poly, double tol) {
@@ -66,7 +62,7 @@ public class RemoveLine {
     /**
      * 删除节点流程
      *
-     * @param poly 面
+     * @param poly  面
      * @param tolmm 删除容差
      * @param scale 比例
      * @return 删除后结果
@@ -79,7 +75,7 @@ public class RemoveLine {
      * 删除节点流程
      *
      * @param poly 面
-     * @param tol 容差
+     * @param tol  容差
      * @return 删除后结果
      */
     public static Geometry delete(Polygon poly, double tol) {
@@ -111,7 +107,7 @@ public class RemoveLine {
      * 面删除节点
      *
      * @param polygon polygon
-     * @param seg {@link PolygonEdge}
+     * @param seg     {@link PolygonEdge}
      * @return 删除后结果
      */
     private static PolygonDelete deleteEdge(Polygon polygon, PolygonEdge seg) {
@@ -158,7 +154,7 @@ public class RemoveLine {
      * 线段删除节点
      *
      * @param lineString 线段
-     * @param seg {@link LineEdge}
+     * @param seg        {@link LineEdge}
      * @return 删除后结果
      */
     private static RingeDelete deleteEdge(LineString lineString, LineEdge seg) {
@@ -271,13 +267,13 @@ public class RemoveLine {
      * 节点删除
      *
      * @param seg {@link LineEdge}
-     * @param cs 节点坐标集合
-     * @param c1 c1
-     * @param c2 c2
+     * @param cs  节点坐标集合
+     * @param c1  c1
+     * @param c2  c2
      * @return 删除后结果
      */
     private static RingeDelete getRingeDelete(LineEdge seg, Coordinate[] cs, Coordinate c1,
-            Coordinate c2) {
+                                              Coordinate c2) {
         Coordinate[] css = new Coordinate[cs.length - 2];
         css[0] = c1;
         css[1] = c2;

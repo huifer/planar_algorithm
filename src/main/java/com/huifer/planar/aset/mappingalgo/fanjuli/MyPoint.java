@@ -15,8 +15,15 @@ public class MyPoint {
     private double z;
     private double dist;
 
-    public void setDist(double dist) {
-        this.dist = dist;
+    public MyPoint(String id, double x, double y, double z) {
+        this.id = id;
+        this.x = x;
+        this.y = y;
+        this.z = z;
+    }
+
+    public MyPoint() {
+        x = y = z = dist = 0;
     }
 
     public String getId() {
@@ -35,15 +42,16 @@ public class MyPoint {
         return z;
     }
 
+    public void setZ(double z) {
+        this.z = z;
+    }
+
     public double getDist() {
         return dist;
     }
 
-    public MyPoint(String id, double x, double y ,double z) {
-        this.id = id;
-        this.x = x;
-        this.y = y;
-        this.z = z;
+    public void setDist(double dist) {
+        this.dist = dist;
     }
 
     @Override
@@ -55,13 +63,5 @@ public class MyPoint {
                 ", z=" + z +
                 ", dist=" + dist +
                 '}';
-    }
-
-    public MyPoint() {
-        x = y = z = dist = 0;
-    }
-
-    public void setZ(double z) {
-        this.z = z;
     }
 }

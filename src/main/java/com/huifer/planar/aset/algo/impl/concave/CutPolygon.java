@@ -3,20 +3,16 @@ package com.huifer.planar.aset.algo.impl.concave;
 import com.huifer.planar.aset.utils.AdjacentMatrixUtil;
 import com.huifer.planar.aset.utils.CommonUtils;
 import com.huifer.planar.aset.utils.simplecycles.SearchCycles;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import org.locationtech.jts.geom.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : CutPolygon </p>
@@ -31,13 +27,13 @@ public class CutPolygon {
     /**
      * 面根据线段切割
      *
-     * @param polygon 被切割的面
+     * @param polygon  被切割的面
      * @param clipLine 切割线段
      * @param aoPoints 凹点
      */
     public static ArrayList<Polygon> cutPolygonWithLineString(Polygon polygon,
-            List<LineString> clipLine,
-            List<Point> aoPoints) throws Exception {
+                                                              List<LineString> clipLine,
+                                                              List<Point> aoPoints) throws Exception {
         // 面的组成线段
         InitParam initParam = new InitParam(polygon, clipLine, aoPoints).invoke();
         List<LineString> polygonLineString = initParam.getPolygonLineString();
@@ -77,11 +73,11 @@ public class CutPolygon {
     /**
      * 获取每一个点的连接情况
      *
-     * @param calcLine 计算用的线段
+     * @param calcLine  计算用的线段
      * @param calcPoint 计算用的点
      */
     public static ArrayList<Polygon> calcPointJoinPoint(Set<LineString> calcLine,
-            Set<Point> calcPoint) {
+                                                        Set<Point> calcPoint) {
 //        System.out.println("========================最终计算数据========================");
 
         List<Point> paramPoint = calcPoint.stream().collect(Collectors.toList());
@@ -118,13 +114,13 @@ public class CutPolygon {
      * 计算需要运算的参数 点&线
      *
      * @param initParamLineStateList {@link LineState}
-     * @param newPg 新的面
-     * @param calcLine 需要计算参数的线
+     * @param newPg                  新的面
+     * @param calcLine               需要计算参数的线
      * @return calcPoint 需要计算参数的点
      */
     public static Set<Point> getCalcParam(List<LineState> initParamLineStateList, Polygon
             newPg,
-            Set<LineString> calcLine) {
+                                          Set<LineString> calcLine) {
         Set<Point> calcPoint;
         // 内部线添加到计算参数中calcLine中
         for (LineState lineState : initParamLineStateList) {
@@ -148,12 +144,12 @@ public class CutPolygon {
      * 内部线段相交后打断构造新的线段集合
      * <p>计算内部线段的增加点</p>
      *
-     * @param clipLine 内部线段
+     * @param clipLine               内部线段
      * @param initParamLineStateList 原始的内部线段
-     * @param pg 需要被切割的面
+     * @param pg                     需要被切割的面
      */
     private static void calcInternalLine(List<LineString> clipLine,
-            List<LineState> initParamLineStateList, Polygon pg) {
+                                         List<LineState> initParamLineStateList, Polygon pg) {
         Set<Point> pointSet = new HashSet<>();
         // 直线上的点过滤 , 过滤掉面上的点
         List<Point> polygon2point = CommonUtils.polygon2point(pg);
@@ -203,20 +199,20 @@ public class CutPolygon {
      * <p>2. 如果这个点是线段的终点删掉</p>
      * <p>3. 其他在这个线段上的点保留</p>
      *
-     * @param pointSet 存储点的集合
-     * @param iLine i标记线
-     * @param iLineStartPoint i标记线的起点
-     * @param iLineEndPoint i标记线的终点
-     * @param jEndPoint j标记线的终点
-     * @param jEndBuffer i标记线的起点的buffer
-     * @param polygon2point 面构成的点
+     * @param pointSet               存储点的集合
+     * @param iLine                  i标记线
+     * @param iLineStartPoint        i标记线的起点
+     * @param iLineEndPoint          i标记线的终点
+     * @param jEndPoint              j标记线的终点
+     * @param jEndBuffer             i标记线的起点的buffer
+     * @param polygon2point          面构成的点
      * @param initParamLineStateList 内部线段集合
      */
     private static void getLineInPoint(Set<Point> pointSet, LineString iLine, Point
             iLineStartPoint,
-            Point iLineEndPoint, Point jEndPoint, Geometry
-            jEndBuffer, List<Point> polygon2point,
-            List<LineState> initParamLineStateList) {
+                                       Point iLineEndPoint, Point jEndPoint, Geometry
+                                               jEndBuffer, List<Point> polygon2point,
+                                       List<LineState> initParamLineStateList) {
         if (jEndBuffer.intersects(iLine)) {
             if (!jEndPoint.equalsExact(iLineStartPoint) && !jEndPoint.equalsExact(iLineEndPoint)
                     && !polygon2point.contains(jEndPoint)) {
@@ -236,7 +232,7 @@ public class CutPolygon {
      * <p>计算外部轮廓的增加点</p>
      *
      * @param polygonLineString 分割面的线段集合
-     * @param otherPoint 凹点外的其他点
+     * @param otherPoint        凹点外的其他点
      * @return 新的面
      */
     @Deprecated
@@ -270,7 +266,7 @@ public class CutPolygon {
      * <p>计算外部轮廓的增加点</p>
      *
      * @param polygonLineString 分割面的线段集合
-     * @param otherPoint 凹点外的其他点
+     * @param otherPoint        凹点外的其他点
      * @return 新的面
      */
     private static Polygon calcOutLine(List<LineString> polygonLineString, List<Point> otherPoint) {

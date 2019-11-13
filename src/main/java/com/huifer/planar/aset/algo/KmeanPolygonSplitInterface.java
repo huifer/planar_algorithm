@@ -14,9 +14,10 @@ public interface KmeanPolygonSplitInterface {
 
     /**
      * 切割面
-     * @param wkt polygon wkt描述
+     *
+     * @param wkt  polygon wkt描述
      * @param setp 随机点数量
-     * @param k 切几个面
+     * @param k    切几个面
      * @return {@link com.huifer.planar.aset.entity.KmeanPolygonResult}
      * @throws ParseException 异常
      */
@@ -26,11 +27,11 @@ public interface KmeanPolygonSplitInterface {
     /**
      * shp 切割
      *
-     * @param path 文件位置
+     * @param path       文件位置
      * @param splitFiled 切分字段
      * @return 切分结果
      * @throws Exception 异常
      */
-        Object splitPolygonWithShp(String path, String splitFiled) throws Exception;
+    Object splitPolygonWithShp(String path, String splitFiled) throws Exception;
 
 }

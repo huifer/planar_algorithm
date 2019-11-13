@@ -1,27 +1,16 @@
 package com.huifer.planar.aset.utils;
 
-import static java.lang.Double.max;
-import static java.lang.Double.min;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.stream.Collectors;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.*;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 import org.locationtech.jts.operation.polygonize.Polygonizer;
+
+import java.math.BigDecimal;
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.lang.Double.max;
+import static java.lang.Double.min;
 
 /**
  * <p>Title : CommonUtils </p>
@@ -57,7 +46,7 @@ public class CommonUtils {
      * 是否在面列表中
      *
      * @param pglist 面列表
-     * @param pg 判断面
+     * @param pg     判断面
      * @return yes/no
      */
     public static Boolean inPgList(List<Polygon> pglist, Polygon pg) {
@@ -120,7 +109,7 @@ public class CommonUtils {
      * 点是否在线段上容差0.00002
      *
      * @param ls 线段
-     * @param p 点
+     * @param p  点
      * @return yes/no
      */
     public static boolean pointOnLine(LineString ls, Point p) {
@@ -131,7 +120,7 @@ public class CommonUtils {
     /**
      * 直线切割，根据点列表
      *
-     * @param ls 直线
+     * @param ls        直线
      * @param pointList 切割点表
      * @return 切割后的线段
      */
@@ -196,7 +185,7 @@ public class CommonUtils {
     /**
      * 直线切割 ， 根据一个点 , 切割后结果是倒过来的
      *
-     * @param ls 直线
+     * @param ls    直线
      * @param point 切割点
      * @return 切割后的线段
      */
@@ -251,7 +240,7 @@ public class CommonUtils {
      * 线段上的另一个点
      *
      * @param ls 线段
-     * @param p 点
+     * @param p  点
      * @return 另一个点
      */
     public static Point anotherPoint(LineString ls, Point p) {
@@ -462,7 +451,7 @@ public class CommonUtils {
      * 根据输入点切割线段
      *
      * @param ls 被切割线
-     * @param p 切割线的依据点
+     * @param p  切割线的依据点
      * @return 切割后结果
      */
     public static List<LineString> lineStringSplit(LineString ls, Point p) {
@@ -688,7 +677,7 @@ public class CommonUtils {
     /**
      * 保留几位小数
      *
-     * @param d 一个double值
+     * @param d        一个double值
      * @param saveNumb 保留几位小数
      * @return double保留小数后的值
      */

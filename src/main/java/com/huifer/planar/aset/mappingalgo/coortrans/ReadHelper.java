@@ -1,13 +1,16 @@
 package com.huifer.planar.aset.mappingalgo.coortrans;
 
+import com.huifer.planar.aset.mappingalgo.coortrans.lib.AllData;
 import com.huifer.planar.aset.mappingalgo.coortrans.lib.Ellipsoid;
-import com.huifer.planar.aset.mappingalgo.coortrans.lib.*;
+import com.huifer.planar.aset.mappingalgo.coortrans.lib.PointInfo;
+import com.huifer.planar.aset.mappingalgo.coortrans.lib.Rad2Dms;
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title : ReadHelper </p>
@@ -21,17 +24,12 @@ public class ReadHelper {
 
     private AllData data;
 
-    public AllData getData() {
-        return data;
-    }
-
     public ReadHelper(String path) {
         List<String> textData = ReadHelper.readFileHelper(path);
         this.data = getDataForTxt(textData);
 
 
     }
-
 
     public static void main(String[] args) {
 
@@ -73,7 +71,6 @@ public class ReadHelper {
         return data;
     }
 
-
     /***
      * 读文件
      * @param path
@@ -93,10 +90,14 @@ public class ReadHelper {
             }
             return list;
         } catch (Exception e) {
-            log.error("{}",e);
+            log.error("{}", e);
             e.printStackTrace();
         }
         return null;
+    }
+
+    public AllData getData() {
+        return data;
     }
 
 

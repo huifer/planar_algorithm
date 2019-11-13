@@ -1,7 +1,5 @@
 package com.huifer.planar.aset.entity;
 
-import static com.huifer.planar.aset.entity.MyPoint.onSegment;
-
 import com.huifer.planar.aset.algo.GraphInterface;
 import com.huifer.planar.aset.algo.LineOverInterface;
 import com.huifer.planar.aset.algo.impl.ovlayer.GraphCore;
@@ -9,9 +7,12 @@ import com.huifer.planar.aset.algo.impl.ovlayer.LineOverCore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import static com.huifer.planar.aset.entity.MyPoint.onSegment;
+
 /**
  * 描述:
- *  线段
+ * 线段
+ *
  * @author huifer
  */
 @Data
@@ -42,9 +43,9 @@ public class MyLine {
     /**
      * 求直线外一点到直线上的投影点
      *
-     * @param pLine 线上一点
-     * @param k 斜率
-     * @param pOut 线外一点
+     * @param pLine    线上一点
+     * @param k        斜率
+     * @param pOut     线外一点
      * @param pProject 投影点
      */
     public static void getProjectivePoint(MyPoint pLine, double k, MyPoint pOut, MyPoint pProject) {
@@ -139,7 +140,7 @@ public class MyLine {
      * 直线绕点旋转 a 度
      *
      * @param basePoint 旋转的基点
-     * @param a 度数
+     * @param a         度数
      */
     public void roateLine(MyPoint basePoint, double a) {
         MyPoint myPoint1 = this.getPoint1().rotatePoint(basePoint, 30);

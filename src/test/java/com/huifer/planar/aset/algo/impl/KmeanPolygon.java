@@ -4,16 +4,17 @@ import com.huifer.planar.aset.algo.VoronoiInterface;
 import com.huifer.planar.aset.algo.impl.polygon.VoronoiInterfaceImpl;
 import com.huifer.planar.aset.entity.Kmeans;
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.ParseException;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>Title : KmeanPolygon </p>
@@ -23,18 +24,6 @@ import org.locationtech.jts.io.ParseException;
  * @date 2019-01-15
  */
 public class KmeanPolygon {
-
-
-    @Test
-    public  void main() throws ParseException {
-        // 打算随机多少个点
-        int setp = 20;
-        // k = 簇数
-        int k = 5;
-        String polygonWkt = "POLYGON((411 80, 569 125, 675 238, 795 321, 917 416, 866 597, 600 699, 443 614, 500 483, 399 338, 411 80))";
-        HashMap hashMap = polygonKmeanData(polygonWkt, setp, k);
-
-    }
 
 
     public static HashMap polygonKmeanData(String polygonWkt, int setp, int k)
@@ -107,10 +96,20 @@ public class KmeanPolygon {
         return result;
     }
 
-
     private static double random(double max, double min) {
         double d = (Math.random() * (max - min) + min);
         return d;
+    }
+
+    @Test
+    public void main() throws ParseException {
+        // 打算随机多少个点
+        int setp = 20;
+        // k = 簇数
+        int k = 5;
+        String polygonWkt = "POLYGON((411 80, 569 125, 675 238, 795 321, 917 416, 866 597, 600 699, 443 614, 500 483, 399 338, 411 80))";
+        HashMap hashMap = polygonKmeanData(polygonWkt, setp, k);
+
     }
 
 

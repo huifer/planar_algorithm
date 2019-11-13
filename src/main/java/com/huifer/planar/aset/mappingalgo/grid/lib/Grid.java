@@ -22,32 +22,14 @@ public class Grid {
      * 间隔
      */
     public double interval;
-
-    @Override
-    public String toString() {
-        return "Grid{" +
-                "gridCells=" + Arrays.toString(gridCells) +
-                ", interval=" + interval +
-                ", width=" + width +
-                ", height=" + height +
-                ", maxX=" + maxX +
-                ", maxY=" + maxY +
-                ", minX=" + minX +
-                ", minY=" + minY +
-                ", convex=" + convex +
-                '}';
-    }
-
     /**
      * 宽高
      */
     public int width, height;
-
     /**
      * 四至
      */
     private double maxX, maxY, minX, minY;
-
     /**
      * 凸包
      */
@@ -62,6 +44,21 @@ public class Grid {
         initCell();
         // 凸包内网格
         calcInSide();
+    }
+
+    @Override
+    public String toString() {
+        return "Grid{" +
+                "gridCells=" + Arrays.toString(gridCells) +
+                ", interval=" + interval +
+                ", width=" + width +
+                ", height=" + height +
+                ", maxX=" + maxX +
+                ", maxY=" + maxY +
+                ", minX=" + minX +
+                ", minY=" + minY +
+                ", convex=" + convex +
+                '}';
     }
 
     private void calcInSide() {
@@ -104,7 +101,7 @@ public class Grid {
                 continue;
             }
             // 交点计算
-            double x =  (p.y - p1.y) *  (p2.x - p1.x) /  (p2.y - p1.y) + p1.x;
+            double x = (p.y - p1.y) * (p2.x - p1.x) / (p2.y - p1.y) + p1.x;
             if (x > p.x) {
                 cross++;
             }

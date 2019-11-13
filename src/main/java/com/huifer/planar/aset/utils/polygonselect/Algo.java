@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.utils.polygonselect;
 
 
+import org.locationtech.jts.geom.LineString;
+import org.locationtech.jts.geom.Point;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
 
 import static com.huifer.planar.aset.utils.polygonselect.ReadShpHelper.*;
 
@@ -202,7 +203,7 @@ public class Algo {
     /**
      * 计算结点buffer后，压盖了多少点
      *
-     * @param p 结点
+     * @param p         结点
      * @param pointList 点集合
      * @return 覆盖点数量总和
      */

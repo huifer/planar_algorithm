@@ -1,7 +1,7 @@
 package com.huifer.planar.aset.view.base;
 
-import java.awt.EventQueue;
-import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * <p>Title : BaseFrame </p>

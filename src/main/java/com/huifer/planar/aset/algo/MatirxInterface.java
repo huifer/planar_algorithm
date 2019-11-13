@@ -33,25 +33,25 @@ public interface MatirxInterface {
      * @return 矩阵乘积
      */
     ArrayList<ArrayList<Double>> getMultipMatrix(ArrayList<ArrayList<Double>> matrixA,
-            ArrayList<ArrayList<Double>> matrixB);
+                                                 ArrayList<ArrayList<Double>> matrixB);
 
 
     /**
      * 矩阵 加减
      *
-     * @param matrixA 矩阵A
-     * @param matrixB 矩阵B
+     * @param matrixA   矩阵A
+     * @param matrixB   矩阵B
      * @param opreation 操作值
      * @return 矩阵加减
      */
     ArrayList<ArrayList<Double>> getAddRemoveMatrix(ArrayList<ArrayList<Double>> matrixA,
-            ArrayList<ArrayList<Double>> matrixB, double opreation);
+                                                    ArrayList<ArrayList<Double>> matrixB, double opreation);
 
     /**
      * 矩阵 倍法运算
      *
      * @param matrix 矩阵
-     * @param k 倍法值
+     * @param k      倍法值
      * @return 倍法运算结果
      */
     ArrayList<ArrayList<Double>> getKMatrix(ArrayList<ArrayList<Double>> matrix, double k);

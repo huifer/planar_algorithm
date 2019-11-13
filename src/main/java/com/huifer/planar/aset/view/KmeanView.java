@@ -7,15 +7,14 @@ import com.huifer.planar.aset.utils.geo.GeomtryUtil;
 import com.huifer.planar.aset.view.base.BaseFrame;
 import com.huifer.planar.aset.view.base.FrameContext;
 import com.huifer.planar.aset.view.base.ViewHelper;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.util.ArrayList;
-import java.util.List;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.ParseException;
+
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Title : KmeanView </p>
@@ -64,7 +63,7 @@ public class KmeanView extends FrameContext {
     }
 
     private void drawKmean(Graphics2D g2d, ArrayList<Point> points, int[] assignments,
-            double[][] centroids, List<Geometry> voronoi, List<Geometry> geometryList) {
+                           double[][] centroids, List<Geometry> voronoi, List<Geometry> geometryList) {
         // 绘制所有点
         ViewHelper.setStrokeWidth(g2d, 1);
         ArrayList<Color> colorList = ViewHelper.getColorList();
@@ -95,7 +94,6 @@ public class KmeanView extends FrameContext {
 
         ViewHelper.setStrokeWidth(g2d, 3);
         ViewHelper.setColor(g2d, ViewHelper.RED);
-
 
 
         for (int i = 0; i < geometryList.size(); i++) {

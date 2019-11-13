@@ -2,17 +2,10 @@ package com.huifer.planar.aset.algo.impl.line;
 
 import com.huifer.planar.aset.algo.RemoveNodesInterface;
 import com.huifer.planar.aset.utils.geo.GeomtryUtil;
+import org.locationtech.jts.geom.*;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryCollection;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.LinearRing;
-import org.locationtech.jts.geom.MultiPolygon;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : RemoveNodesCore </p>
@@ -27,7 +20,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 通用级别
      *
      * @param geometry 几何图形
-     * @param node 需要删除的节点
+     * @param node     需要删除的节点
      * @return 删除后结果
      */
     public static Geometry removeNode(Geometry geometry, Coordinate node) {
@@ -57,7 +50,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 点删除节点
      *
      * @param point 点
-     * @param node 需要删除的节点
+     * @param node  需要删除的节点
      * @return 删除后结果
      */
     private static Point removeNode(Point point, Coordinate node) {
@@ -71,7 +64,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 环删除节点
      *
      * @param linearRing 环
-     * @param node 需要删除的节点
+     * @param node       需要删除的节点
      * @return 删除后结果
      */
     private static LinearRing removeNode(LinearRing linearRing, Coordinate node) {
@@ -97,7 +90,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 删除面上节点
      *
      * @param polygon 面
-     * @param node 需要删除的节点
+     * @param node    需要删除的节点
      * @return 删除后结果
      */
     private static Polygon removeNode(Polygon polygon, Coordinate node) {
@@ -125,7 +118,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
     /**
      * 多面删除节点
      *
-     * @param mu 多面
+     * @param mu   多面
      * @param node 需要删除的节点
      * @return 删除后结果
      */
@@ -163,7 +156,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 折线删除节点
      *
      * @param lineString 折线
-     * @param node 需要删除的节点
+     * @param node       需要删除的节点
      * @return 删除后结果
      */
     private static LineString removeNode(LineString lineString, Coordinate node) {
@@ -211,7 +204,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 节点数组删除节点
      *
      * @param coordinates 节点数组
-     * @param node 需要删除的节点
+     * @param node        需要删除的节点
      * @return 删除后结果
      */
     private static Coordinate[] removeNode(Coordinate[] coordinates, Coordinate node) {
@@ -231,7 +224,7 @@ public class RemoveNodesCore implements RemoveNodesInterface {
      * 判断节点是否在列表中
      *
      * @param coordinates 点集合列表
-     * @param node 待判断节点
+     * @param node        待判断节点
      * @return Boolean
      */
     private static boolean inCoordinates(Coordinate[] coordinates, Coordinate node) {

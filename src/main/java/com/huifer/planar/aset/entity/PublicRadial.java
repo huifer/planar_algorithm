@@ -40,7 +40,6 @@ public class PublicRadial {
     private double C;
 
 
-
     public PublicRadial(Point startPoint, Point endPoint) {
         this.startPoint = startPoint;
         this.endPoint = endPoint;

@@ -1,14 +1,15 @@
 package com.huifer.planar.aset.utils.simplecycles;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.junit.Test;
 
 public class SearchCyclesTest {
     @Test
-    public void te(){
+    public void te() {
         List<List<Boolean>> bs = new ArrayList<>();
         Boolean[] b1 = new Boolean[]{false, true, false, false, false, false, false, false, false,
                 false};

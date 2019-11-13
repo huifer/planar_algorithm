@@ -2,12 +2,14 @@ package com.huifer.planar.aset.algo;
 
 
 import com.huifer.planar.aset.algo.impl.line.SimpleDijkstra;
-import com.huifer.planar.aset.entity.*;
+import com.huifer.planar.aset.entity.MyLine;
+import com.huifer.planar.aset.entity.MyPoint;
+import com.huifer.planar.aset.entity.ResultShortestPath;
 import com.huifer.planar.aset.utils.DijkstraUtil;
-import java.util.ArrayList;
-
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 @Slf4j
 public class SimpleDijkstraTest {

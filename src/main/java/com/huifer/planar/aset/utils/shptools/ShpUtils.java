@@ -1,15 +1,5 @@
 package com.huifer.planar.aset.utils.shptools;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import org.geotools.data.shapefile.ShapefileDataStore;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureIterator;
@@ -19,6 +9,11 @@ import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.opengis.feature.Property;
 import org.opengis.feature.simple.SimpleFeature;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.util.*;
 
 
 /**
@@ -30,6 +25,7 @@ import org.opengis.feature.simple.SimpleFeature;
 public class ShpUtils {
 
     private static String THE_GEOM = "the_geom";
+
     /***
      *  读取SHP文件
      * @param shpPath 数据

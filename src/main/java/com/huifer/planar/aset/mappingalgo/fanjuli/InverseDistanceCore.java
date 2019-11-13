@@ -1,10 +1,11 @@
 package com.huifer.planar.aset.mappingalgo.fanjuli;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * <p>Title : InverseDistanceCore </p>
@@ -30,10 +31,11 @@ public class InverseDistanceCore {
 
     /**
      * idw 主要流程
+     *
      * @param points
      * @param point
      */
-    public static HashMap<String, Object> idw(List<MyPoint> points,MyPoint point,int n) {
+    public static HashMap<String, Object> idw(List<MyPoint> points, MyPoint point, int n) {
 
         HashMap<String, Object> res = new HashMap<>();
 
@@ -45,7 +47,7 @@ public class InverseDistanceCore {
         points.sort(
                 Comparator.comparingDouble(MyPoint::getDist)
         );
-        double h = getH(points,n);
+        double h = getH(points, n);
         point.setZ(h);
         res.put("参数点", point);
         res.put("参与插值", points.subList(0, n));
@@ -54,6 +56,7 @@ public class InverseDistanceCore {
 
     /**
      * 计算 距离
+     *
      * @param p1 第一个点
      * @param p2 第二个点
      * @return double 距离
@@ -71,7 +74,7 @@ public class InverseDistanceCore {
      * @param n 参与数量
      * @return double h
      */
-    private static double getH(List<MyPoint> points,int n) {
+    private static double getH(List<MyPoint> points, int n) {
         double over = 0;
         double under = 0;
         for (int i = 0; i < n; i++) {

@@ -11,8 +11,9 @@ public interface AverageWidthAverageLength {
 
     /**
      * 平均宽度
+     *
      * @param count 分成多少分
-     * @param wkt polygon wkt 描述
+     * @param wkt   polygon wkt 描述
      * @return 平均宽度
      */
     double calcAverageWidth(int count, String wkt);
@@ -20,8 +21,9 @@ public interface AverageWidthAverageLength {
 
     /**
      * 平均长度
+     *
      * @param count 分成多少分
-     * @param wkt polygon wkt 描述
+     * @param wkt   polygon wkt 描述
      * @return 平均长度
      */
     double calcAverageLength(int count, String wkt);

@@ -1,18 +1,13 @@
 package com.huifer.planar.aset.utils.geo;
 
+import org.locationtech.jts.algorithm.LineIntersector;
+import org.locationtech.jts.algorithm.RobustLineIntersector;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.geom.util.AffineTransformation;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.locationtech.jts.algorithm.LineIntersector;
-import org.locationtech.jts.algorithm.RobustLineIntersector;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryCollection;
-import org.locationtech.jts.geom.LineSegment;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.geom.util.AffineTransformation;
 
 /**
  * <p>Title : GeomtryUtil </p>
@@ -78,13 +73,13 @@ public class GeomtryUtil {
     /**
      * 确定 vertex 到对边的投影 （ 角平分线的垂直投影）
      *
-     * @param vertex 待测投影点
-     * @param opposingEdge 对边
+     * @param vertex            待测投影点
+     * @param opposingEdge      对边
      * @param intersectionPoint 线段延长后交点
      * @return 点
      */
     public static Coordinate getProjectedPoint(Coordinate vertex, LineSegment opposingEdge,
-            IntersectionCoordinate intersectionPoint) {
+                                               IntersectionCoordinate intersectionPoint) {
         // 绘制一条垂直余对边的直线 并且穿过交点 情况分为2种
         //1. 顶点和顶点在这个支线的不同侧
         // 针对第一点将投影落在对边外即交点的另一侧
@@ -166,7 +161,7 @@ public class GeomtryUtil {
      * 从 lineString 中获取第 index个
      *
      * @param lineString lineString
-     * @param index index
+     * @param index      index
      * @return LineSegment
      */
     public static LineSegment getLineSegment(LineString lineString, int index) {
@@ -177,8 +172,8 @@ public class GeomtryUtil {
      * 从 lineString 中获取第 index个 可否修改
      *
      * @param lineString lineString
-     * @param index 索引值
-     * @param revamp 是否修改
+     * @param index      索引值
+     * @param revamp     是否修改
      * @return LineSegment
      */
     public static LineSegment getLineSegment(LineString lineString, int index, boolean revamp) {
@@ -198,7 +193,7 @@ public class GeomtryUtil {
      * @return {@link IntersectionCoordinate}
      */
     public static IntersectionCoordinate getIntersectionCoordinatePoint(LineSegment lineA,
-            LineSegment lineB) {
+                                                                        LineSegment lineB) {
         double x1 = lineA.p0.x;
         double y1 = lineA.p0.y;
         double x2 = lineA.p1.x;
@@ -229,7 +224,7 @@ public class GeomtryUtil {
     /**
      * 根据测试点返回距离测试线远的顶点
      *
-     * @param point 测试点
+     * @param point       测试点
      * @param lineSegment 测试线
      * @return 点
      */
@@ -242,7 +237,7 @@ public class GeomtryUtil {
      * 判断线是否在面内
      *
      * @param lineSegment 待测线
-     * @param polygon 平面
+     * @param polygon     平面
      * @return boolean
      */
     public static boolean isLineIntersectingPolygon(LineSegment lineSegment, Polygon polygon) {
@@ -278,12 +273,12 @@ public class GeomtryUtil {
     /**
      * 判断给定点是否在直线端点上
      *
-     * @param point 待测点
+     * @param point       待测点
      * @param lineSegment 直线
      * @return boolean
      */
     public static boolean isPointOnLineSegmentStartOrEnd(Coordinate point,
-            LineSegment lineSegment) {
+                                                         LineSegment lineSegment) {
         if (point.equals(lineSegment.p0) || point.equals(lineSegment.p1)) {
             return false;
         }
@@ -293,7 +288,7 @@ public class GeomtryUtil {
     /**
      * 判断给定点是否在直线端点上
      *
-     * @param point 待测点
+     * @param point       待测点
      * @param lineSegment 直线
      * @return boolean
      */

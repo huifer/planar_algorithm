@@ -1,23 +1,14 @@
 package com.huifer.planar.aset.utils.shptools.overlay;
 
 import com.huifer.planar.aset.utils.shptools.triangulation.Vector2D;
+import org.geotools.geometry.jts.JTSFactoryFinder;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.io.ParseException;
+import org.locationtech.jts.io.WKTReader;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import org.geotools.geometry.jts.JTSFactoryFinder;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryCollection;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.LinearRing;
-import org.locationtech.jts.geom.MultiLineString;
-import org.locationtech.jts.geom.MultiPoint;
-import org.locationtech.jts.geom.MultiPolygon;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.ParseException;
-import org.locationtech.jts.io.WKTReader;
 
 /**
  * <p>Title : Operation </p>
@@ -27,6 +18,8 @@ import org.locationtech.jts.io.WKTReader;
  * @date 2018/10/10
  */
 public class Operation {
+
+    private GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
 
     public static void main(String[] args) throws Exception {
         Operation op = new Operation();
@@ -65,8 +58,6 @@ public class Operation {
 //        System.out.println(op.intersectionGeo(s_1_2_3, s_1_3_4));
 //        System.out.println(op.intersectionGeo(s_1_2_7_4_6_5_3_1, s_1_3_4));
     }
-
-    private GeometryFactory geometryFactory = JTSFactoryFinder.getGeometryFactory(null);
 
     /**
      * 画一个点
@@ -268,13 +259,13 @@ public class Operation {
      * @param polygonByWKT
      * @return
      */
-    public List<double[]> polygonToPoint(Polygon polygonByWKT){
+    public List<double[]> polygonToPoint(Polygon polygonByWKT) {
         Coordinate[] coordinates = polygonByWKT.getCoordinates();
         List<double[]> pointList = new ArrayList<>();
 
         Arrays.stream(coordinates).forEach(
-                s->{
-                    pointList.add(new double[]{s.x, s.y}) ;
+                s -> {
+                    pointList.add(new double[]{s.x, s.y});
                 }
         );
         return pointList;
@@ -288,7 +279,7 @@ public class Operation {
      * @param c
      * @return
      */
-    public Polygon createTriangle(Vector2D a, Vector2D b, Vector2D c)  {
+    public Polygon createTriangle(Vector2D a, Vector2D b, Vector2D c) {
         String wkt = "POLYGON ((" + a.x + " " + a.y + " , " + b.x + " " + b.y + " , " + c.x + " " + c.y + " , " + a.x + " " + a.y + "))";
         WKTReader reader = new WKTReader(geometryFactory);
         Polygon polygon = null;
@@ -301,8 +292,6 @@ public class Operation {
         return polygon;
 
     }
-
-
 
 
 }

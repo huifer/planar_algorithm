@@ -6,10 +6,6 @@ import com.huifer.planar.aset.entity.KmeanPolygonResult;
 import com.huifer.planar.aset.entity.Kmeans;
 import com.huifer.planar.aset.utils.shptools.ShpUtils;
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +18,11 @@ import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.ParseException;
 import org.locationtech.jts.io.WKTReader;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>Title : KmeanPolygonSplitCore </p>
  * <p>Description : Kmean split polygon core </p>
@@ -31,6 +32,11 @@ import org.locationtech.jts.io.WKTReader;
  */
 @Slf4j
 public class KmeanPolygonSplitCore implements KmeanPolygonSplitInterface {
+
+    private static double random(double max, double min) {
+        double d = (Math.random() * (max - min) + min);
+        return d;
+    }
 
     @Override
     public Object splitPolygonWithShp(String path, String splitFiled) throws Exception {
@@ -62,7 +68,6 @@ public class KmeanPolygonSplitCore implements KmeanPolygonSplitInterface {
                 // 操作
 
 
-
                 KmeanPolygonResult kmeanPolygonResult = splitPolygon(wkt.toString(), 100, splitSize);
                 List<Geometry> geometryList = kmeanPolygonResult.getGeometryList();
 
@@ -90,20 +95,6 @@ public class KmeanPolygonSplitCore implements KmeanPolygonSplitInterface {
 //        });
 
         return null;
-    }
-
-    @Data
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @ToString
-    static class Dt {
-        private Map<String, Object> rowData;
-        private Geometry geometry;
-    }
-
-    private static double random(double max, double min) {
-        double d = (Math.random() * (max - min) + min);
-        return d;
     }
 
     @Override
@@ -182,6 +173,15 @@ public class KmeanPolygonSplitCore implements KmeanPolygonSplitInterface {
         result.setVoronoi(voronoi);
         result.setGeometryList(geometryList);
         return result;
+    }
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @ToString
+    static class Dt {
+        private Map<String, Object> rowData;
+        private Geometry geometry;
     }
 
 }

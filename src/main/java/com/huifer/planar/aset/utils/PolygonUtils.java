@@ -1,13 +1,14 @@
 package com.huifer.planar.aset.utils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.geom.util.LineStringExtracter;
 import org.locationtech.jts.operation.polygonize.Polygonizer;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * <p>Title : PolygonUtils </p>

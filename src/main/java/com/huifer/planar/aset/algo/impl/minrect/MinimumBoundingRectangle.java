@@ -19,7 +19,7 @@ public class MinimumBoundingRectangle {
      * 最小外接矩形的获取
      *
      * @param geom 需要计算的面
-     * @param gf 构造器
+     * @param gf   构造器
      * @return 最小外接矩形结果
      */
     public static Polygon get(Geometry geom, GeometryFactory gf) {

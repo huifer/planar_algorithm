@@ -3,22 +3,7 @@ package com.huifer.planar.aset.utils.geo;
 import org.geotools.factory.CommonFactoryFinder;
 import org.geotools.filter.text.cql2.CQL;
 import org.geotools.filter.text.cql2.CQLException;
-import org.geotools.styling.AnchorPoint;
-import org.geotools.styling.FeatureTypeStyle;
-import org.geotools.styling.Fill;
-import org.geotools.styling.Font;
-import org.geotools.styling.Graphic;
-import org.geotools.styling.LineSymbolizer;
-import org.geotools.styling.Mark;
-import org.geotools.styling.PointPlacement;
-import org.geotools.styling.PointSymbolizer;
-import org.geotools.styling.PolygonSymbolizer;
-import org.geotools.styling.Rule;
-import org.geotools.styling.Stroke;
-import org.geotools.styling.Style;
-import org.geotools.styling.StyleBuilder;
-import org.geotools.styling.StyleFactory;
-import org.geotools.styling.TextSymbolizer;
+import org.geotools.styling.*;
 import org.opengis.filter.FilterFactory;
 
 /**
@@ -47,22 +32,20 @@ public class GeoStyleUtil {
     }
 
 
-
-
     /**
      * 面样式
      *
-     * @param condition 过滤条件
-     * @param strokeColor 边框颜色
-     * @param strokeWith 边框宽度
-     * @param fillColor 填充颜色
+     * @param condition           过滤条件
+     * @param strokeColor         边框颜色
+     * @param strokeWith          边框宽度
+     * @param fillColor           填充颜色
      * @param fillBackgroundColor 填充颜色
-     * @param fillkeAlpl 填充透明度
+     * @param fillkeAlpl          填充透明度
      * @return {@link Style}
      */
     public static Style polygonStyle(String condition, String strokeColor,
-            String strokeWith, String fillColor, String fillBackgroundColor,
-            String fillkeAlpl) {
+                                     String strokeWith, String fillColor, String fillBackgroundColor,
+                                     String fillkeAlpl) {
         Stroke stroke = styleFactory.createStroke(filterFactory.literal(strokeColor),
                 filterFactory.literal(strokeWith));
         Fill fill = styleFactory
@@ -91,15 +74,16 @@ public class GeoStyleUtil {
 
     /**
      * polygon style
-     * @param cql 过滤条件
+     *
+     * @param cql         过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
      * @return {@link Style}
      */
     public static Style getPolygonStyle(String cql, String strokeColor,
-            String strokeWith, String fillColor, String fillkeAlpl) {
+                                        String strokeWith, String fillColor, String fillkeAlpl) {
 
         Rule[] rules = new Rule[1];
 
@@ -128,18 +112,19 @@ public class GeoStyleUtil {
 
         return style;
     }
+
     /**
      * 面样式
      *
-     * @param condition 过滤条件
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param strokeAlpl 填充颜色
-     * @param fillColor 填充透明度
+     * @param strokeWith  边框厚度
+     * @param strokeAlpl  填充颜色
+     * @param fillColor   填充透明度
      * @return {@link Style}
      */
     public static Style polygonStyle2(String condition, String strokeColor,
-            String strokeWith, String strokeAlpl, String fillColor, String fillkeAlpl) {
+                                      String strokeWith, String strokeAlpl, String fillColor, String fillkeAlpl) {
         Rule[] rules = new Rule[1];
 
         Stroke stroke = styleFactory.createStroke(filterFactory.literal(strokeColor),
@@ -172,16 +157,16 @@ public class GeoStyleUtil {
     /**
      * 点样式
      *
-     * @param condition 过滤条件
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框宽度
-     * @param fillColor 填充色
-     * @param fillAlpl 透明度
-     * @param size 点大小
+     * @param strokeWith  边框宽度
+     * @param fillColor   填充色
+     * @param fillAlpl    透明度
+     * @param size        点大小
      * @return {@link Style}
      */
     public static Style pointStyle(String condition, String strokeColor, String strokeWith,
-            String fillColor, String fillAlpl, int size) {
+                                   String fillColor, String fillAlpl, int size) {
         Graphic graphic = styleFactory.createDefaultGraphic();
         // 先把图形做出来
         Mark circleMark = styleFactory.getCircleMark();
@@ -219,9 +204,9 @@ public class GeoStyleUtil {
     /**
      * 线样式
      *
-     * @param condition 过滤条件
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框宽度
+     * @param strokeWith  边框宽度
      * @return {@link Style}
      */
     public static Style lineStyle(String condition, String strokeColor, String strokeWith) {
@@ -249,24 +234,24 @@ public class GeoStyleUtil {
     }
 
     /**
-     * @param x x
-     * @param y y
-     * @param condition 过滤条件
+     * @param x           x
+     * @param y           y
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
-     * @param size 点大小
-     * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param fontColor 光晕的颜色
-     * @param feild 生成文本的字段
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
+     * @param size        点大小
+     * @param textColor   文本颜色
+     * @param fontSize    字体的大小
+     * @param fontColor   光晕的颜色
+     * @param feild       生成文本的字段
      * @return {@link Style}
      */
     public static Style pointTextStyle(double x, double y, String condition,
-            String strokeColor, String strokeWith, String fillColor,
-            String fillkeAlpl, String size, String textColor, String fontSize,
-            String fontColor, String feild) {
+                                       String strokeColor, String strokeWith, String fillColor,
+                                       String fillkeAlpl, String size, String textColor, String fontSize,
+                                       String fontColor, String feild) {
         Rule[] rules = new Rule[1];
         // 位置
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
@@ -318,18 +303,18 @@ public class GeoStyleUtil {
     /**
      * 文字样式
      *
-     * @param x x
-     * @param y y
+     * @param x         x
+     * @param y         y
      * @param condition 过滤条件
      * @param textColor 文本颜色
-     * @param fontSize 字体的大小
+     * @param fontSize  字体的大小
      * @param fontColor 光晕的颜色
-     * @param feild 生成文本的字段
-     * @param ration 旋转角度
+     * @param feild     生成文本的字段
+     * @param ration    旋转角度
      * @return {@link Style}
      */
     public static Style textStyle(double x, double y, String condition, String textColor,
-            String fontSize, String fontColor, String feild, String ration) {
+                                  String fontSize, String fontColor, String feild, String ration) {
 
         Rule[] rules = new Rule[1];
 
@@ -364,16 +349,16 @@ public class GeoStyleUtil {
     /**
      * 点渲染规则
      *
-     * @param condition 过滤条件
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
-     * @param size 点大小
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
+     * @param size        点大小
      * @return {@link Rule}
      */
     public static Rule pointRule(String condition, String strokeColor, String strokeWith,
-            String fillColor, String fillkeAlpl, int size) {
+                                 String fillColor, String fillkeAlpl, int size) {
 
         Graphic gr = styleFactory.createDefaultGraphic();
         Mark mark = styleFactory.getCircleMark();
@@ -406,9 +391,9 @@ public class GeoStyleUtil {
     /**
      * 线样式渲染规则
      *
-     * @param condition 过滤条件
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
+     * @param strokeWith  边框厚度
      * @return {@link Rule}
      */
     public static Rule lineRule(String condition, String strokeColor, String strokeWith) {
@@ -435,16 +420,16 @@ public class GeoStyleUtil {
     /**
      * 面渲染规则
      *
-     * @param condition 过滤条件
-     * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
+     * @param condition           过滤条件
+     * @param strokeColor         边框颜色
+     * @param strokeWith          边框厚度
+     * @param fillColor           填充颜色
      * @param fillBackgroundColor 填充颜色
-     * @param fillkeAlpl 填充透明度
+     * @param fillkeAlpl          填充透明度
      * @return {@link Rule}
      */
     public static Rule polygonRule(String condition, String strokeColor, String strokeWith,
-            String fillColor, String fillBackgroundColor, String fillkeAlpl) {
+                                   String fillColor, String fillBackgroundColor, String fillkeAlpl) {
 
         Stroke stroke = styleFactory.createStroke(filterFactory.literal(strokeColor),
                 filterFactory.literal(strokeWith));
@@ -487,7 +472,7 @@ public class GeoStyleUtil {
      * @return {@link Rule}
      */
     public static Rule polygonRule(String condition, String strokeColor,
-            String strokeWith, String fillColor, String fillkeAlpl) {
+                                   String strokeWith, String fillColor, String fillkeAlpl) {
 
         Stroke stroke = styleFactory.createStroke(filterFactory.literal(strokeColor),
                 filterFactory.literal(strokeWith));
@@ -513,16 +498,16 @@ public class GeoStyleUtil {
     /**
      * 面渲染规则
      *
-     * @param condition 过滤条件
-     * @param strokeAlpl 边框透明度
+     * @param condition   过滤条件
+     * @param strokeAlpl  边框透明度
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
      * @return {@link Rule}
      */
     public static Rule polygonRule2(String condition, String strokeAlpl, String strokeColor,
-            String strokeWith, String fillColor, String fillkeAlpl) {
+                                    String strokeWith, String fillColor, String fillkeAlpl) {
         Stroke stroke = styleFactory.createStroke(filterFactory.literal(strokeColor),
                 filterFactory.literal(strokeWith), filterFactory.literal(strokeAlpl));
 
@@ -547,24 +532,24 @@ public class GeoStyleUtil {
     /**
      * 点文字样式
      *
-     * @param x x
-     * @param y y
-     * @param condition 过滤条件
+     * @param x           x
+     * @param y           y
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
-     * @param size 点大小
-     * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param fontColor 光晕的颜色
-     * @param feild 生成文本的字段
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
+     * @param size        点大小
+     * @param textColor   文本颜色
+     * @param fontSize    字体的大小
+     * @param fontColor   光晕的颜色
+     * @param feild       生成文本的字段
      * @return {@link Rule}
      */
     public static Rule pointTextRule(double x, double y, String condition,
-            String strokeColor, String strokeWith, String fillColor,
-            String fillkeAlpl, String size, String textColor, String fontSize,
-            String fontColor, String feild) {
+                                     String strokeColor, String strokeWith, String fillColor,
+                                     String fillkeAlpl, String size, String textColor, String fontSize,
+                                     String fontColor, String feild) {
 
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
         PointPlacement pointPlacement = styleBuilder.createPointPlacement(anchorPoint,
@@ -609,25 +594,25 @@ public class GeoStyleUtil {
     /**
      * 点文字样式
      *
-     * @param x x
-     * @param y y
-     * @param condition 过滤条件
+     * @param x           x
+     * @param y           y
+     * @param condition   过滤条件
      * @param strokeColor 边框颜色
-     * @param strokeWith 边框厚度
-     * @param fillColor 填充颜色
-     * @param fillkeAlpl 填充透明度
-     * @param size 点大小
-     * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param fontColor 光晕的颜色
-     * @param feild 生成文本的字段
-     * @param fontStyle 字体
+     * @param strokeWith  边框厚度
+     * @param fillColor   填充颜色
+     * @param fillkeAlpl  填充透明度
+     * @param size        点大小
+     * @param textColor   文本颜色
+     * @param fontSize    字体的大小
+     * @param fontColor   光晕的颜色
+     * @param feild       生成文本的字段
+     * @param fontStyle   字体
      * @return {@link Rule}
      */
     public static Rule pointTextRule(double x, double y, String condition,
-            String strokeColor, String strokeWith, String fillColor,
-            String fillkeAlpl, String size, String textColor, String fontSize,
-            String fontColor, String feild, String fontStyle) {
+                                     String strokeColor, String strokeWith, String fillColor,
+                                     String fillkeAlpl, String size, String textColor, String fontSize,
+                                     String fontColor, String feild, String fontStyle) {
 
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
         PointPlacement pointPlacement = styleBuilder.createPointPlacement(anchorPoint,
@@ -673,17 +658,17 @@ public class GeoStyleUtil {
     /**
      * 文本 样式
      *
-     * @param x x
-     * @param y y
+     * @param x         x
+     * @param y         y
      * @param condition 过滤条件
      * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param feild 生成文本的字段
-     * @param ration 旋转角度
+     * @param fontSize  字体的大小
+     * @param feild     生成文本的字段
+     * @param ration    旋转角度
      * @return {@link Rule}
      */
     public static Rule textRule(double x, double y, String condition,
-            String textColor, String fontSize, String feild, String ration) {
+                                String textColor, String fontSize, String feild, String ration) {
 
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
         PointPlacement pointPlacement = styleBuilder.createPointPlacement(anchorPoint,
@@ -711,18 +696,18 @@ public class GeoStyleUtil {
     /**
      * 文本样式
      *
-     * @param x x
-     * @param y y
+     * @param x         x
+     * @param y         y
      * @param condition 过滤条件
      * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param feild 文本字段
-     * @param ration 旋转角度
+     * @param fontSize  字体的大小
+     * @param feild     文本字段
+     * @param ration    旋转角度
      * @param fontStyle 文字样式
      * @return {@link Rule}
      */
     public static Rule getTextRule(double x, double y, String condition,
-            String textColor, String fontSize, String feild, String ration, String fontStyle) {
+                                   String textColor, String fontSize, String feild, String ration, String fontStyle) {
 
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
         PointPlacement pointPlacement = styleBuilder.createPointPlacement(anchorPoint,
@@ -751,20 +736,20 @@ public class GeoStyleUtil {
     /**
      * 文本样式
      *
-     * @param x x
-     * @param y y
-     * @param condition 过滤条件
-     * @param textColor 文本颜色
-     * @param fontSize 字体的大小
-     * @param fontColor 光晕的颜色
+     * @param x             x
+     * @param y             y
+     * @param condition     过滤条件
+     * @param textColor     文本颜色
+     * @param fontSize      字体的大小
+     * @param fontColor     光晕的颜色
      * @param fontHaloWidth 光晕的厚度
-     * @param feild 生成文本的字段
-     * @param ration 旋转角度
+     * @param feild         生成文本的字段
+     * @param ration        旋转角度
      * @return {@link Rule}
      */
     public static Rule getTextRuleHalo(double x, double y, String condition, String textColor,
-            String fontSize, String fontColor, String fontHaloWidth,
-            String feild, String ration) {
+                                       String fontSize, String fontColor, String fontHaloWidth,
+                                       String feild, String ration) {
 
         AnchorPoint anchorPoint = styleBuilder.createAnchorPoint(x, y);
         PointPlacement pointPlacement = styleBuilder.createPointPlacement(anchorPoint,

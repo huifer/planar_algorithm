@@ -2,17 +2,14 @@ package com.huifer.planar.aset.utils;
 
 import com.huifer.planar.aset.utils.AdjacentMatrixUtil.Graph;
 import com.huifer.planar.aset.utils.simplecycles.SearchCycles;
+import org.junit.Test;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.io.WKTReader;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.junit.Test;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.WKTReader;
 
 public class AdjacentMatrixUtilTest {
 

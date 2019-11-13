@@ -25,6 +25,10 @@ public class HeightCal {
      */
     PointInfo p;
 
+    public HeightCal(List<PointInfo> points) {
+        this.points = points;
+    }
+
     @Override
     public String toString() {
         return "HeightCal{" +
@@ -33,11 +37,6 @@ public class HeightCal {
                 ", p=" + p +
                 '}';
     }
-
-    public HeightCal(List<PointInfo> points) {
-        this.points = points;
-    }
-
 
     public double getHeight(PointInfo p) {
         this.p = p;

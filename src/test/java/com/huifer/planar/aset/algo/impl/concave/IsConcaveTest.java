@@ -1,8 +1,5 @@
 package com.huifer.planar.aset.algo.impl.concave;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.locationtech.jts.geom.Geometry;
@@ -11,12 +8,16 @@ import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class IsConcaveTest {
     private List<Polygon> geometries = new ArrayList<>();
 
 
     @Before
-    public void init()throws Exception {
+    public void init() throws Exception {
         List<String> polygons = Arrays.asList(
                 "POLYGON ((88064.3489745457 73720.9215322899,88064.123424185 73716.9969560137,88068.4765461465 73716.0947545709,88068.950201904 73719.1396844404,88066.8074734774 73717.4931668073,88067.348794343 73720.312546316,88065.7022767099 73718.4855883943,88066.063157287 73721.7109585523,88064.9579605196 73719.4780099814,88064.3489745457 73720.9215322899))"
 //                "POLYGON ((87603.925198795 74100.4418126276,87644.1066171941 74038.4476242404,87641.8105361427 73984.489719533,87723.3214134667 73999.4142463669,87603.925198795 74100.4418126276))",

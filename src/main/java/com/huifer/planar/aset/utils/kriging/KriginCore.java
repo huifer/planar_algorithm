@@ -1,6 +1,7 @@
 package com.huifer.planar.aset.utils.kriging;
 
 import Jama.Matrix;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,7 +107,7 @@ public class KriginCore {
      * 变差函数
      */
     private static void bianchaFunction(int xLength, double[] xs, double[] ys, double[] zs,
-            double[][] ZD, double[][] data) {
+                                        double[][] ZD, double[][] data) {
         // 变差函数的系数矩阵
         for (int i = 0; i <= xLength; i++) {
             for (int j = 0; j <= xLength; j++) {

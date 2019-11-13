@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class KmeansTest {
     @Test
-    public void KmeanRunTest(){
+    public void KmeanRunTest() {
         int n = 20;
         double[][] points = new double[n][2];
         double[] a_1 = new double[]{1, 3};
@@ -50,7 +50,7 @@ public class KmeansTest {
         points[19] = a_20;
 
         int k = 3;
-        Kmeans kmeans = new Kmeans( points, k);
+        Kmeans kmeans = new Kmeans(points, k);
 
         double[][] centroids = kmeans.getCentroids();
         System.out.println();

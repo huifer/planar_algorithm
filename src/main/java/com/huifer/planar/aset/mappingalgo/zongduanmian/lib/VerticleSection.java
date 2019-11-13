@@ -14,24 +14,29 @@ public class VerticleSection {
 
     /**
      * 关键点
+     *
      * @see PointInfo
      */
     public List<PointInfo> kPoint;
 
     /**
      * 所有点
+     *
      * @see PointInfo
      */
     public List<PointInfo> allPoint;
-
-    /**
-     * 间隔
-     */
-    private double interval;
     /**
      * 方位角
      */
     public double direction1, direction2;
+    /**
+     * 面积
+     */
+    public double area;
+    /**
+     * 间隔
+     */
+    private double interval;
     /**
      * 距离d
      */
@@ -41,10 +46,6 @@ public class VerticleSection {
      * @see PointInfo
      */
     private PointInfo p1, p2, p3;
-    /**
-     * 面积
-     */
-    public double area;
 
     public VerticleSection() {
         this.interval = 10;
@@ -71,6 +72,7 @@ public class VerticleSection {
 
     /**
      * 所有计算值
+     *
      * @param cal
      * @param h0
      */
@@ -188,6 +190,7 @@ public class VerticleSection {
 
     /**
      * 计算 direction
+     *
      * @param dx
      * @param dy
      * @return

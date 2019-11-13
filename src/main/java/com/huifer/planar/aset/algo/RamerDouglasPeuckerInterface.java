@@ -13,7 +13,8 @@ public interface RamerDouglasPeuckerInterface {
 
     /**
      * dp算法
-     * @param list 点集合
+     *
+     * @param list      点集合
      * @param threshold 容差
      * @return 压缩后结果
      */

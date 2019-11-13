@@ -41,7 +41,7 @@ public class MinCircle {
      *
      * @param centerX 中心点x
      * @param centerY 中心点y
-     * @param r 半径
+     * @param r       半径
      */
     public MinCircle(double centerX, double centerY, double r) {
         this(new GeometryFactory().createPoint(new Coordinate(centerX, centerY)), r);
@@ -52,7 +52,7 @@ public class MinCircle {
      * 构造器
      *
      * @param center 中兴点
-     * @param r 半径
+     * @param r      半径
      */
     public MinCircle(Point center, double r) {
         this.center = center;
@@ -128,7 +128,7 @@ public class MinCircle {
     /**
      * 距离的平方公式
      *
-     * @param c 点1
+     * @param c  点1
      * @param pt 点2
      * @return 距离的平方
      */
@@ -150,6 +150,7 @@ public class MinCircle {
 
     /**
      * 点是否被包含
+     *
      * @param point
      * @param er
      * @return
@@ -157,9 +158,6 @@ public class MinCircle {
     public boolean contains(Point point, double er) {
         return (center.distance(point) - (r + er) < EPS);
     }
-
-
-
 
 
 }

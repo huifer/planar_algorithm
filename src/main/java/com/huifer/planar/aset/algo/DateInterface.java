@@ -13,7 +13,7 @@ public interface DateInterface {
     /**
      * 获取 xxxx 年 xx 月的所有日期
      *
-     * @param year 年
+     * @param year  年
      * @param month 月
      * @return 月历
      */
@@ -22,7 +22,7 @@ public interface DateInterface {
     /**
      * 获取 xxxx 年 xx 月 总天数
      *
-     * @param year 年
+     * @param year  年
      * @param month 月
      * @return 天数
      */

@@ -17,5 +17,4 @@ public class AllData {
     public List<PointInfo> data = new ArrayList<>();
 
 
-
 }

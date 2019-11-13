@@ -2,8 +2,9 @@ package com.huifer.planar.aset.algo.impl;
 
 import com.huifer.planar.aset.algo.MatirxInterface;
 import com.huifer.planar.aset.entity.RefObject;
-import java.util.ArrayList;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
 
 /**
  * <p>Title : MatirxCore </p>
@@ -138,7 +139,7 @@ public class MatirxCore implements MatirxInterface {
 
     @Override
     public ArrayList<ArrayList<Double>> getMultipMatrix(ArrayList<ArrayList<Double>> matrixA,
-            ArrayList<ArrayList<Double>> matrixB) {
+                                                        ArrayList<ArrayList<Double>> matrixB) {
 
         if (!isMatrix(matrixA)) {
             log.error("{}", new RuntimeException("参数异常"));
@@ -171,7 +172,7 @@ public class MatirxCore implements MatirxInterface {
 
     @Override
     public ArrayList<ArrayList<Double>> getAddRemoveMatrix(ArrayList<ArrayList<Double>> matrixA,
-            ArrayList<ArrayList<Double>> matrixB, double opreation) {
+                                                           ArrayList<ArrayList<Double>> matrixB, double opreation) {
 
         if (!isMatrix(matrixA)) {
             log.error("{}", new RuntimeException("参数异常"));
@@ -201,7 +202,7 @@ public class MatirxCore implements MatirxInterface {
 
     @Override
     public ArrayList<ArrayList<Double>> getKMatrix(ArrayList<ArrayList<Double>> matrix,
-            double k) {
+                                                   double k) {
 
         if (!isMatrix(matrix)) {
             log.error("{}", new RuntimeException("参数异常"));

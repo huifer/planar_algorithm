@@ -1,19 +1,5 @@
 package com.huifer.planar.aset.utils.geo;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.geotools.data.DataStore;
 import org.geotools.data.DataStoreFinder;
 import org.geotools.data.FeatureSource;
@@ -25,6 +11,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * <p>Title : GeoJsonUtil </p>
  * <p>Description : geojson工具</p>
@@ -35,16 +27,17 @@ import org.json.simple.parser.JSONParser;
 public class GeoJsonUtil {
 
     private static String EQST = "";
+
     /**
      * json转成 geojson
      *
-     * @param json json
-     * @param lonStr 经度字段的key
-     * @param latStr 纬度字段的key
+     * @param json    json
+     * @param lonStr  经度字段的key
+     * @param latStr  纬度字段的key
      * @param geoType 1点类型 2线类型 3面类型
      */
     public static String jsonToGeoJson(String json, String lonStr,
-            String latStr, int geoType) {
+                                       String latStr, int geoType) {
 
         String returnStr = null;
         String type1 = "Point";
@@ -266,12 +259,12 @@ public class GeoJsonUtil {
     /**
      * 把要素集合写成geojson文件到本地
      *
-     * @param path 本地路径
+     * @param path     本地路径
      * @param features 要素集合
-     * @param cs 编码
+     * @param cs       编码
      */
     public static void simpleFeatureCollectionToGeoJSON(String path,
-            SimpleFeatureCollection features, String cs) {
+                                                        SimpleFeatureCollection features, String cs) {
         final StringWriter sw = new StringWriter();
         try {
             GeoJSON.write(features, sw);
@@ -292,8 +285,8 @@ public class GeoJsonUtil {
      * 根据编码 把字符串写入文件
      *
      * @param saveFile 路径
-     * @param content 内容
-     * @param cs 编码
+     * @param content  内容
+     * @param cs       编码
      */
     public static void toFileByCS(File saveFile, String content, String cs) {
         File parent = saveFile.getParentFile();
@@ -339,7 +332,7 @@ public class GeoJsonUtil {
     /**
      * 把文件读成字符串
      *
-     * @param path 路径
+     * @param path     路径
      * @param encoding 编码
      */
     public static String readerFileToStrings(String path, String encoding)

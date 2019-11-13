@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class FileRd {
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         String path = "E:\\mck\\planar_algorithm\\src\\main\\java\\com\\huifer\\planar\\aset\\utils\\shptools\\triangulation\\1c.txt";
         readTxtFile(path);
     }
@@ -38,7 +38,7 @@ public class FileRd {
         } catch (Exception e) {
             e.printStackTrace();
         }
-return pointSet;
+        return pointSet;
     }
 
 }

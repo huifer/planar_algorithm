@@ -29,8 +29,8 @@ public class SortThreePoint {
     }
 
     /**
-     * @param minv 当前最小值
-     * @param maxv 当前最大值
+     * @param minv   当前最小值
+     * @param maxv   当前最大值
      * @param curnum 确认过的内容
      * @param maxnum 选取几个点作为一组
      */

@@ -23,6 +23,7 @@ public interface PolygonCenterOfGravityInterface {
 
     /**
      * 计算凹多边形中心
+     *
      * @param concavePolygon 凹多边形
      * @return 重心点
      */

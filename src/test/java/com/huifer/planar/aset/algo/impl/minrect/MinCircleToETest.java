@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.algo.impl.minrect;
 
 import com.huifer.planar.aset.algo.impl.minrect.MinCircleToE.P;
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Polygon;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MinCircleToETest {
 
@@ -26,7 +27,6 @@ public class MinCircleToETest {
         Polygon polygon = MinCircleToE.threePointCircle(p1, p2, p3);
         System.out.println(polygon);
     }
-
 
 
     @Test

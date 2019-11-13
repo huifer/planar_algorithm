@@ -1,28 +1,18 @@
 package com.huifer.planar.aset.algo.impl.polygon;
 
-import static com.huifer.planar.aset.utils.CommonUtils.reserveDecimal;
-import static com.huifer.planar.aset.utils.CommonUtils.reserveDecimalGeometry;
-
 import com.huifer.planar.aset.algo.PolygonRemoveNodeInterface;
 import com.huifer.planar.aset.entity.PolygonRemoveNodeResult;
 import com.huifer.planar.aset.utils.FileCommonMethod;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
-import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.*;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static com.huifer.planar.aset.utils.CommonUtils.reserveDecimal;
+import static com.huifer.planar.aset.utils.CommonUtils.reserveDecimalGeometry;
 
 /**
  * <p>Title : PolygonRemoveNodeByLength </p>
@@ -46,7 +36,7 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
 
     @Override
     public PolygonRemoveNodeResult polygonRemoveNodeByLength(List<Polygon> polygonList,
-            double tolerance)
+                                                             double tolerance)
             throws Exception {
 
         Set<Point> errorPoints = new HashSet<>();
@@ -151,16 +141,16 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
     /**
      * 计算基础参数结果
      *
-     * @param geometryList 面坐标列表
-     * @param errorPoints 异常点
-     * @param oldGeoms 输入老的面
-     * @param newGeoms 输入老的面经过数据精度保留后的面
-     * @param lineStrings 异常点的连接线
+     * @param geometryList           面坐标列表
+     * @param errorPoints            异常点
+     * @param oldGeoms               输入老的面
+     * @param newGeoms               输入老的面经过数据精度保留后的面
+     * @param lineStrings            异常点的连接线
      * @param polygonEditorArrayList {@link PolygonEditor}
      */
     private void doCalcParam(List<Polygon> geometryList, Set<Point> errorPoints,
-            List<Polygon> oldGeoms, List<Polygon> newGeoms, List<LineString> lineStrings,
-            List<PolygonEditor> polygonEditorArrayList) {
+                             List<Polygon> oldGeoms, List<Polygon> newGeoms, List<LineString> lineStrings,
+                             List<PolygonEditor> polygonEditorArrayList) {
         for (int i = 0; i < geometryList.size(); i++) {
             Polygon polygon = geometryList.get(i);
             Coordinate[] coordinates = polygon.getCoordinates();
@@ -201,13 +191,13 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
     /**
      * 计算 PointWithPolygon 结果
      *
-     * @param errorPoints 异常点
-     * @param newGeoms 精度保留后的面
+     * @param errorPoints               异常点
+     * @param newGeoms                  精度保留后的面
      * @param pointWithPolygonArrayList {@link PointWithPolygon}
-     * @param lineStrings 异常点的连接线
+     * @param lineStrings               异常点的连接线
      */
     private void doCalacPointWithPolygonArgs(Set<Point> errorPoints, List<Polygon> newGeoms,
-            List<PointWithPolygon> pointWithPolygonArrayList, List<LineString> lineStrings) {
+                                             List<PointWithPolygon> pointWithPolygonArrayList, List<LineString> lineStrings) {
         List<Point> collect = errorPoints.stream().collect(Collectors.toList());
 
         for (int i = 0; i < collect.size(); i++) {
@@ -240,11 +230,11 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
      * 计算删除点
      *
      * @param pointWithPolygonArrayList {@link PointWithPolygon}
-     * @param polygonEditorArrayList {@link PolygonEditor }
+     * @param polygonEditorArrayList    {@link PolygonEditor }
      * @return 删除点
      */
     private List<Point> doCalcDeletePoint(List<PointWithPolygon> pointWithPolygonArrayList,
-            List<PolygonEditor> polygonEditorArrayList) {
+                                          List<PolygonEditor> polygonEditorArrayList) {
         List<Point> deletPointList;
         deletPointList = getDeletePointList(pointWithPolygonArrayList);
         // 对  deletPointList 修改 得到应该有效删除点  1. 这个点不能在三角形内 2. 四边形确认手段：  ABS(( 当前面 - 原始面)/原始面 ) < 固定比例
@@ -267,14 +257,14 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
     /**
      * polygon 删除点后的结果
      *
-     * @param newGeoms 保留小数过后的面列表
-     * @param deleteResult 需要删除的点集合
+     * @param newGeoms               保留小数过后的面列表
+     * @param deleteResult           需要删除的点集合
      * @param polygonEditorArrayList {@link PolygonEditor}
      * @return polygon 修改后结果
      */
     private List<Polygon> polygonDeletePoint(List<Polygon> newGeoms,
-            List<Point> deleteResult, List<PolygonEditor> polygonEditorArrayList,
-            List<Point> outLinePointList)
+                                             List<Point> deleteResult, List<PolygonEditor> polygonEditorArrayList,
+                                             List<Point> outLinePointList)
             throws Exception {
         System.out
                 .println("============================polygon 删除点后的结果============================");
@@ -345,7 +335,7 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
      * 从节点中删除一个点重新构造面
      *
      * @param polygonIndexPoint 原始面的节点
-     * @param deletePoint 需要删除的节点
+     * @param deletePoint       需要删除的节点
      */
     private Polygon oldPolygonDeleteNode(List<Point> polygonIndexPoint, Point deletePoint) {
         // 删除点
@@ -414,13 +404,13 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
     /**
      * 当前面移除删除点后的图形
      *
-     * @param oldPolygon 当前面
-     * @param deletePoint 需要移除的点
+     * @param oldPolygon             当前面
+     * @param deletePoint            需要移除的点
      * @param polygonEditorArrayList {@link PolygonEditor}
      * @return [geom, 比例]
      */
     private List<Object[]> geometryDeletePoint(Polygon oldPolygon, Coordinate deletePoint,
-            List<PolygonEditor> polygonEditorArrayList) {
+                                               List<PolygonEditor> polygonEditorArrayList) {
         List<Coordinate> polygonNode = Arrays.stream(oldPolygon.getCoordinates())
                 .collect(Collectors.toList());
 
@@ -468,12 +458,12 @@ public class PolygonRemoveNodeByLength implements PolygonRemoveNodeInterface {
     /**
      * 计算新的面
      *
-     * @param oldPolygon 老的面
+     * @param oldPolygon  老的面
      * @param polygonNode 老的面的节点集合
      * @return [geom, 比例]
      */
     private Object[] doCalcNewPolygon(Polygon oldPolygon,
-            List<Coordinate> polygonNode) {
+                                      List<Coordinate> polygonNode) {
         Polygon newPolygon;
         Object[] polygonToRole = new Object[2];
 

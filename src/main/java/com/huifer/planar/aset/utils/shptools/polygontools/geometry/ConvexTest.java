@@ -2,6 +2,7 @@ package com.huifer.planar.aset.utils.shptools.polygontools.geometry;
 
 
 import com.huifer.planar.aset.utils.shptools.polygontools.entity.LatLngEntity;
+
 import java.util.ArrayList;
 
 /**
@@ -362,14 +363,12 @@ public class ConvexTest {
         list.add(new LatLngEntity(91500.08448, 74432.59747));
 
 
-
         ArrayList<LatLngEntity> convexHullPts = convexHull.getConvexHull(list);
 
 
 //        convexHullPts.forEach(
 //                s -> System.out.println(s.getLng() + " , " + s.getLat())
 //        );
-
 
 
     }

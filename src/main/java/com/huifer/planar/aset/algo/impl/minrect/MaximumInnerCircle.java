@@ -1,15 +1,12 @@
 package com.huifer.planar.aset.algo.impl.minrect;
 
 
+import lombok.ToString;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.io.WKTReader;
+
 import java.util.Comparator;
 import java.util.PriorityQueue;
-import lombok.ToString;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.WKTReader;
 
 /**
  * <p>Title : 最大内接圆</p>
@@ -32,7 +29,7 @@ public class MaximumInnerCircle {
     /**
      * 最大内接圆的图形
      *
-     * @param polygon 需要求最大内接圆的面
+     * @param polygon   需要求最大内接圆的面
      * @param precision 预设容差，0.0001 在接口中已经写死
      * @return 圆
      */
@@ -106,7 +103,6 @@ public class MaximumInnerCircle {
                 .buffer(bestCell.d);
         return buffer;
     }
-
 
 
     public static Point inCirclePoint(Polygon polygon, double precision) {
@@ -264,10 +260,10 @@ public class MaximumInnerCircle {
             double ax = x - h / 2;
             double ay = y - h / 2;
             double bx = x - h / 2;
-            double by =y + h / 2 ;
+            double by = y + h / 2;
             double cx = x + h / 2;
-            double cy =y + h / 2  ;
-            double dx =x + h / 2;
+            double cy = y + h / 2;
+            double dx = x + h / 2;
             double dy = y - h / 2;
 
 //            String o =

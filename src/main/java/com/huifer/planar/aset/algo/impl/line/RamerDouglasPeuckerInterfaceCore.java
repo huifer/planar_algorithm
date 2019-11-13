@@ -1,6 +1,7 @@
 package com.huifer.planar.aset.algo.impl.line;
 
 import com.huifer.planar.aset.algo.RamerDouglasPeuckerInterface;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,12 +29,12 @@ public class RamerDouglasPeuckerInterfaceCore implements RamerDouglasPeuckerInte
      *
      * @param startX 起点x
      * @param startY 起点y
-     * @param endX 终点x
-     * @param endY 终点y
+     * @param endX   终点x
+     * @param endY   终点y
      * @return 距离
      */
     private static double calcPointDist(double startX, double startY, double endX,
-            double endY) {
+                                        double endY) {
         return sqr(startX - endX) + sqr(startY - endY);
     }
 
@@ -44,12 +45,12 @@ public class RamerDouglasPeuckerInterfaceCore implements RamerDouglasPeuckerInte
      * @param pointY 待测点y
      * @param startX 起点x
      * @param startY 起点y
-     * @param endX 终点x
-     * @param endY 终点y
+     * @param endX   终点x
+     * @param endY   终点y
      * @return 距离平方
      */
     private static double distanceToSquared(double pointX, double pointY, double startX,
-            double startY, double endX, double endY) {
+                                            double startY, double endX, double endY) {
         double l2 = calcPointDist(startX, startY, endX, endY);
         if (l2 == 0) {
             return calcPointDist(pointX, pointY, startX, startY);
@@ -74,27 +75,27 @@ public class RamerDouglasPeuckerInterfaceCore implements RamerDouglasPeuckerInte
      * @param pointY 待测点y
      * @param startX 起点x
      * @param startY 起点y
-     * @param endX 终点x
-     * @param endY 终点y
+     * @param endX   终点x
+     * @param endY   终点y
      * @return 点到直线的垂直距离
      */
     private static double calcVerticalDist(double pointX, double pointY, double startX,
-            double startY,
-            double endX, double endY) {
+                                           double startY,
+                                           double endX, double endY) {
         return Math.sqrt(distanceToSquared(pointX, pointY, startX, startY, endX, endY));
     }
 
     /**
      * douglasPeucker 实现
      *
-     * @param list 原始数据 [  [x1,y1],[x2,y2],[x3,y3]  ]
+     * @param list       原始数据 [  [x1,y1],[x2,y2],[x3,y3]  ]
      * @param startIndex 起点索引
-     * @param endIndex 终点索引
-     * @param threshold 阈值
+     * @param endIndex   终点索引
+     * @param threshold  阈值
      * @param resultList 数据结果
      */
     private static void douglasPeucker(List<Double[]> list, int startIndex, int endIndex,
-            double threshold, List<Double[]> resultList) {
+                                       double threshold, List<Double[]> resultList) {
         // 找出最大距离点
         double dmax = 0;
         int index = 0;
@@ -132,7 +133,7 @@ public class RamerDouglasPeuckerInterfaceCore implements RamerDouglasPeuckerInte
     /**
      * douglasPeucker
      *
-     * @param list [  [x1,y1],[x2,y2],[x3,y3]  ]
+     * @param list      [  [x1,y1],[x2,y2],[x3,y3]  ]
      * @param threshold 预设阈值
      * @return 简化后的曲线坐标值
      */

@@ -2,10 +2,11 @@ package com.huifer.planar.aset.entity;
 
 import com.huifer.planar.aset.algo.MyRectangleOver;
 import com.huifer.planar.aset.algo.impl.polygon.MyRecatngleOverCore;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 /**
  * <p>Title : MyRectangle </p>

@@ -1,8 +1,9 @@
 package com.huifer.planar.aset.algo.impl.minrect;
 
+import org.locationtech.jts.geom.Point;
+
 import java.util.ArrayList;
 import java.util.List;
-import org.locationtech.jts.geom.Point;
 
 /**
  * <p>Title : WelzlAlgo </p>
@@ -19,7 +20,7 @@ public class WelzlAlgo {
      * mec算法
      *
      * @param pointSet 点集合
-     * @param maxId 最大ID
+     * @param maxId    最大ID
      * @return {@link MinCircle} 最小外接圆
      */
     public static MinCircle mec(List<Point> pointSet, int maxId) {
@@ -41,8 +42,8 @@ public class WelzlAlgo {
     /**
      * bMec 算法流程
      *
-     * @param pointSet 点集合
-     * @param maxId 最大id
+     * @param pointSet    点集合
+     * @param maxId       最大id
      * @param boundarySet 边界点
      * @return 圆
      */

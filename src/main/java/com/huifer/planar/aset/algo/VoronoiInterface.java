@@ -1,10 +1,11 @@
 package com.huifer.planar.aset.algo;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.Point;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>Title : VoronoiInterface </p>

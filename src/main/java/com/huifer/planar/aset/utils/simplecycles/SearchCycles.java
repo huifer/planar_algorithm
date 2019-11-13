@@ -1,6 +1,7 @@
 package com.huifer.planar.aset.utils.simplecycles;
 
 import com.huifer.planar.aset.utils.AdjacentMatrixUtil;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
@@ -43,7 +44,7 @@ public class SearchCycles {
     /**
      * 构造器
      *
-     * @param matrix 邻接矩阵
+     * @param matrix     邻接矩阵
      * @param graphNodes 节点列表
      */
     public SearchCycles(List<List<Boolean>> matrix, List graphNodes) {
@@ -54,6 +55,7 @@ public class SearchCycles {
 
     /**
      * 是否阻塞的初始化全部定义成flase
+     *
      * @param ic 数组大小
      * @return 长度为ic的全是false的数组
      */
@@ -67,6 +69,7 @@ public class SearchCycles {
 
     /**
      * 找到闭环的结果并返回
+     *
      * @return 环
      */
     public List getNodeCycles() {
@@ -102,6 +105,7 @@ public class SearchCycles {
 
     /**
      * 从node开始扫描阻塞节点
+     *
      * @param node 节点
      */
     private void unBlock(int node) {
@@ -121,8 +125,9 @@ public class SearchCycles {
 
     /**
      * 找到闭环的核心算法
-     * @param v 点索引
-     * @param s 点索引
+     *
+     * @param v       点索引
+     * @param s       点索引
      * @param adjList 邻接矩阵
      * @return yes : 找到闭环/no ：没有找到闭环
      */

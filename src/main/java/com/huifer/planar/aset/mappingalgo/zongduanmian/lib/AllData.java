@@ -36,7 +36,7 @@ public class AllData {
     public VerticleSection verticleSection;
 
 
-    public AllData(){
+    public AllData() {
         pointInfoList = new ArrayList<>();
         crossSections = new ArrayList<>();
         verticleSection = new VerticleSection();

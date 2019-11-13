@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.algo.impl.minrect;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class WelzlAlgoTest {
 

@@ -2,11 +2,12 @@ package com.huifer.planar.aset.utils.shptools;
 
 import com.huifer.planar.aset.algo.KmeanPolygonSplitInterface;
 import com.huifer.planar.aset.algo.impl.polygon.KmeanPolygonSplitCore;
+import org.junit.Test;
+
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import org.junit.Test;
 
 public class ShpUtilsTest {
 
@@ -46,10 +47,11 @@ public class ShpUtilsTest {
 
         }
     }
+
     @Test
-    public void bx(){
-        byte bb[]={1,2,3,4};
-        for(int i=0;i<bb.length;i++){
+    public void bx() {
+        byte bb[] = {1, 2, 3, 4};
+        for (int i = 0; i < bb.length; i++) {
             int dec = Integer.parseInt(Byte.toString(bb[i]));
             String by = Integer.toBinaryString(dec);
             System.out.print(by + " ");
@@ -58,11 +60,9 @@ public class ShpUtilsTest {
         String s = "a";
         byte[] bytes = s.getBytes();
         StringBuilder binary = new StringBuilder();
-        for (byte b : bytes)
-        {
+        for (byte b : bytes) {
             int val = b;
-            for (int i = 0; i < 8; i++)
-            {
+            for (int i = 0; i < 8; i++) {
                 binary.append((val & 128) == 0 ? 0 : 1);
                 val <<= 1;
             }

@@ -1,9 +1,10 @@
 package com.huifer.planar.aset.mappingalgo.fanjuli;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import org.junit.Test;
 
 /**
  * idw
@@ -11,7 +12,7 @@ import org.junit.Test;
 public class InverseDistanceCoreTest {
 
     @Test
-    public void testIdw(){
+    public void testIdw() {
         ReadHelper readHelper = new ReadHelper(
                 "E:\\mck\\planar_algorithm\\src\\main\\java\\com\\huifer\\planar\\aset\\mappingalgo\\fanjuli\\测站坐标.txt");
         List<MyPoint> points = readHelper.getPoints();

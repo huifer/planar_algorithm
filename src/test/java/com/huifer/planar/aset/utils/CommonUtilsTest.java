@@ -1,10 +1,5 @@
 package com.huifer.planar.aset.utils;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
@@ -12,11 +7,17 @@ import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.WKTReader;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class CommonUtilsTest {
 
 
     @Test
-    public void pointOnLineTest()throws Exception {
+    public void pointOnLineTest() throws Exception {
         LineString l1 = (LineString) new WKTReader()
                 .read("LINESTRING (3128.2956 1454.2733 , 5193.036 1454.2733 )");
         Point p1 = (Point) new WKTReader().read("POINT( 3551.1528 1454.3)");

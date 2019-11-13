@@ -13,9 +13,9 @@ import org.locationtech.jts.io.ParseException;
 public interface PolygonAngleInterface {
 
 
-
     /**
      * polygon每一个线段角度计算
+     *
      * @param wkt polygon WKT描述
      * @return {@link PolygonAngleResult}
      * @throws ParseException 异常
@@ -25,7 +25,8 @@ public interface PolygonAngleInterface {
 
     /**
      * 删除输入角度的值
-     * @param wkt polygon WKT描述
+     *
+     * @param wkt   polygon WKT描述
      * @param angle 角度
      * @return {@link PolygonAngleResult}
      * @throws ParseException

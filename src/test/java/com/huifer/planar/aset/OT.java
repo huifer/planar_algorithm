@@ -1,11 +1,12 @@
 package com.huifer.planar.aset;
 
-import java.util.HashSet;
-import java.util.Set;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.io.WKTReader;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * <p>Title : OT </p>

@@ -1,16 +1,13 @@
 package com.huifer.planar.aset.algo.impl.polygon;
 
 import com.huifer.planar.aset.algo.PolygonCenterOfGravityInterface;
+import org.locationtech.jts.geom.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : PolygonCenterOfGravityCore </p>

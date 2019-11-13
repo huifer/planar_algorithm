@@ -28,6 +28,7 @@ public class GeoCalc {
 
     /**
      * 取模
+     *
      * @param vector
      * @return
      */
@@ -37,7 +38,8 @@ public class GeoCalc {
 
     /**
      * 计算体积
-     * @param grid 网格
+     *
+     * @param grid       网格
      * @param baseHeight 基准高度
      * @return 体积
      */

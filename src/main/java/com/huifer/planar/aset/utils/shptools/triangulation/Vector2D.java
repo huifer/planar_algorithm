@@ -13,10 +13,8 @@ public class Vector2D {
     /**
      * Constructor of the 2D vector class used to create new vector instances.
      *
-     * @param x
-     *            The x coordinate of the new vector
-     * @param y
-     *            The y coordinate of the new vector
+     * @param x The x coordinate of the new vector
+     * @param y The y coordinate of the new vector
      */
     public Vector2D(double x, double y) {
         this.x = x;
@@ -26,8 +24,7 @@ public class Vector2D {
     /**
      * Subtracts the given vector from this.
      *
-     * @param vector
-     *            The vector to be subtracted from this
+     * @param vector The vector to be subtracted from this
      * @return A new instance holding the result of the vector subtraction
      */
     public Vector2D sub(Vector2D vector) {
@@ -37,8 +34,7 @@ public class Vector2D {
     /**
      * Adds the given vector to this.
      *
-     * @param vector
-     *            The vector to be added to this
+     * @param vector The vector to be added to this
      * @return A new instance holding the result of the vector addition
      */
     public Vector2D add(Vector2D vector) {
@@ -48,8 +44,7 @@ public class Vector2D {
     /**
      * Multiplies this by the given scalar.
      *
-     * @param scalar
-     *            The scalar to be multiplied by this
+     * @param scalar The scalar to be multiplied by this
      * @return A new instance holding the result of the multiplication
      */
     public Vector2D mult(double scalar) {
@@ -68,8 +63,7 @@ public class Vector2D {
     /**
      * Computes the dot product of this and the given vector.
      *
-     * @param vector
-     *            The vector to be multiplied by this
+     * @param vector The vector to be multiplied by this
      * @return A new instance holding the result of the multiplication
      */
     public double dot(Vector2D vector) {
@@ -80,9 +74,8 @@ public class Vector2D {
      * Computes the 2D pseudo cross product Dot(Perp(this), vector) of this and
      * the given vector.
      *
-     * @param vector
-     *            The vector to be multiplied to the perpendicular vector of
-     *            this
+     * @param vector The vector to be multiplied to the perpendicular vector of
+     *               this
      * @return A new instance holding the result of the pseudo cross product
      */
     public double cross(Vector2D vector) {

@@ -18,7 +18,7 @@ public interface PolygonRemoveNodeInterface {
      * 面上删除节点，根据节点间距
      *
      * @param geometryList polygon list
-     * @param tolerance 容差
+     * @param tolerance    容差
      * @return {@link Geometry} 删除点列表
      * @throws Exception 异常
      */

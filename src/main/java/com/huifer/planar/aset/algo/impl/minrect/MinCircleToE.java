@@ -1,8 +1,5 @@
 package com.huifer.planar.aset.algo.impl.minrect;
 
-import static java.lang.Double.max;
-import static java.lang.Double.min;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +8,9 @@ import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
+
+import static java.lang.Double.max;
+import static java.lang.Double.min;
 
 /**
  * <p>Title : MinCircleToE </p>
@@ -23,7 +23,6 @@ import org.locationtech.jts.geom.Polygon;
 public class MinCircleToE {
 
 
-
     /**
      * 已知三点求圆
      *
@@ -33,7 +32,7 @@ public class MinCircleToE {
      * @return 圆
      */
     public static Polygon threePointCircle(Coordinate point1, Coordinate point2,
-            Coordinate point3) {
+                                           Coordinate point3) {
         Circle circle = threePointCircle(
                 new P(point1.getX(), point1.getY()),
                 new P(point2.getX(), point2.getY()),
@@ -137,8 +136,6 @@ public class MinCircleToE {
     private static double dist(P p1, P p2) {
         return Math.sqrt((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y));
     }
-
-
 
 
     @Data

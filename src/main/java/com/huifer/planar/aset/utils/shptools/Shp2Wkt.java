@@ -16,8 +16,8 @@ import java.nio.charset.Charset;
 /**
  * shp 2 wkt
  *
- * @date 2019年1月17日
  * @author huifer
+ * @date 2019年1月17日
  */
 public class Shp2Wkt {
 

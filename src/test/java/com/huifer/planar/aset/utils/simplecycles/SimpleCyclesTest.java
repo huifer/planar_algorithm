@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.utils.simplecycles;
 
 import com.huifer.planar.aset.utils.AdjacentMatrixUtil;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Vector;
 import java.util.stream.Collectors;
-import org.junit.Test;
 
 public class SimpleCyclesTest {
 
@@ -54,7 +55,7 @@ public class SimpleCyclesTest {
             if (result != null) {
                 List<Vector> adjList = scc.getAdjacencyList(i).getAdjList();
                 for (int j = i; j < adjList.size(); j++) {
-                    System.out.print("j: " + j  );
+                    System.out.print("j: " + j);
                     for (int k = 0; k < adjList.get(j).size(); k++) {
                         System.out.print(" _" + adjList.get(j).get(k).toString());
 
@@ -64,7 +65,6 @@ public class SimpleCyclesTest {
             }
             System.out.println();
         }
-
 
 
     }

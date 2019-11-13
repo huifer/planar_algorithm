@@ -1,8 +1,9 @@
 package com.huifer.planar.aset.entity;
 
-import java.util.List;
 import lombok.Data;
 import lombok.ToString;
+
+import java.util.List;
 
 /**
  * <p>Title : ResultShortestPath </p>

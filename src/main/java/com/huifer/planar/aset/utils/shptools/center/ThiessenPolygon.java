@@ -1,15 +1,6 @@
 package com.huifer.planar.aset.utils.shptools.center;
 
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
-import java.io.File;
-import java.io.Serializable;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import org.geotools.data.FeatureWriter;
 import org.geotools.data.Transaction;
 import org.geotools.data.shapefile.ShapefileDataStore;
@@ -19,16 +10,16 @@ import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.data.simple.SimpleFeatureSource;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.geometry.jts.JTSFactoryFinder;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Envelope;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
+import org.locationtech.jts.geom.*;
 import org.locationtech.jts.triangulate.VoronoiDiagramBuilder;
 import org.opengis.feature.Property;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+
+import java.io.File;
+import java.io.Serializable;
+import java.nio.charset.Charset;
+import java.util.*;
 
 /**
  * <p>Title : ThiessenPolygon </p>
@@ -41,7 +32,13 @@ public class ThiessenPolygon {
     static ThiessenPolygon tsdbx = new ThiessenPolygon();
     Operation op = new Operation();
 
-    public void voronoiTest()throws Exception {
+    public static void main(String[] args) throws Exception {
+        long start = System.currentTimeMillis();
+        tsdbx.voronoiTest();
+//        System.out.println("共耗时" + (System.currentTimeMillis() - start) + "ms");
+    }
+
+    public void voronoiTest() throws Exception {
         VoronoiDiagramBuilder voronoiDiagramBuilder = new VoronoiDiagramBuilder();
         List<Coordinate> coords = new ArrayList<Coordinate>();
         Envelope clipEnvelpoe = new Envelope();
@@ -132,11 +129,5 @@ public class ThiessenPolygon {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args)throws Exception {
-        long start = System.currentTimeMillis();
-        tsdbx.voronoiTest();
-//        System.out.println("共耗时" + (System.currentTimeMillis() - start) + "ms");
     }
 }

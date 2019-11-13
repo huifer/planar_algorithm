@@ -1,10 +1,5 @@
 package com.huifer.planar.aset.utils;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
 import com.huifer.planar.aset.utils.geo.GeomtryUtil;
 import com.huifer.planar.aset.utils.geo.GeomtryUtil.IntersectionCoordinate;
 import org.junit.Test;
@@ -15,6 +10,8 @@ import org.locationtech.jts.geom.LineSegment;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
+
+import static org.junit.Assert.*;
 
 @RunWith(Enclosed.class)
 public class GeomtryUtilTest {
@@ -58,9 +55,9 @@ public class GeomtryUtilTest {
             Polygon polygon = (Polygon) new WKTReader()
                     .read("POLYGON ((0 0, 10 0, 10 10, 0 10,  0 0))");
             assertFalse(GeomtryUtil.isLineIntersectingPolygon(
-                    new LineSegment(new Coordinate(5,6), new Coordinate(3,3)), polygon));
+                    new LineSegment(new Coordinate(5, 6), new Coordinate(3, 3)), polygon));
             assertTrue(GeomtryUtil.isLineIntersectingPolygon(
-                    new LineSegment(new Coordinate(-1,3), new Coordinate(6, 13)), polygon));
+                    new LineSegment(new Coordinate(-1, 3), new Coordinate(6, 13)), polygon));
         }
 
     }
@@ -137,8 +134,8 @@ public class GeomtryUtilTest {
          */
         @Test
         public void projectPerpendicularPoint() {
-            LineSegment lineA = new LineSegment(new Coordinate(0,12), new Coordinate(0, 105));
-            LineSegment lineB = new LineSegment(new Coordinate(24, 0), new Coordinate(46,0));
+            LineSegment lineA = new LineSegment(new Coordinate(0, 12), new Coordinate(0, 105));
+            LineSegment lineB = new LineSegment(new Coordinate(24, 0), new Coordinate(46, 0));
             IntersectionCoordinate inter = new IntersectionCoordinate(0, 0, lineA, lineB);
             Coordinate projectedPoint = GeomtryUtil.getProjectedPoint(lineB.p0, lineA, inter);
 

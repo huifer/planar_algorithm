@@ -5,16 +5,12 @@ import com.huifer.planar.aset.entity.PublicRadial;
 import com.huifer.planar.aset.utils.AdjacentMatrixUtil;
 import com.huifer.planar.aset.utils.CommonUtils;
 import com.huifer.planar.aset.utils.simplecycles.SearchCycles;
+import org.locationtech.jts.geom.*;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Point;
-import org.locationtech.jts.geom.Polygon;
 
 /**
  * <p>Title : SimpleCutPolygon </p>
@@ -30,12 +26,12 @@ public class SimpleCutPolygon {
      * 简单切割面
      * <P>保留了所有的凸包</P>
      *
-     * @param pg 被切割的面
+     * @param pg        被切割的面
      * @param splitLine 切割线段
      * @return 切割后的面
      */
     public static List<Polygon> simpleCutPolygonWithLine(Polygon pg,
-            List<TroughLineWithSort> splitLine) throws Exception {
+                                                         List<TroughLineWithSort> splitLine) throws Exception {
         // 需要的参数
         // 面的线段
         List<LineString> pgLine = CommonUtils.polygonLineString(pg);
@@ -75,7 +71,7 @@ public class SimpleCutPolygon {
      * @return 线段和线段切割后的线段集合
      */
     private static List<LineString> calcLineCutLine(List<LineString> pgLine,
-            List<LineString> inLine) throws Exception {
+                                                    List<LineString> inLine) throws Exception {
         Set<LineString> result = new HashSet<>();
         List<LineString> allLineString = new ArrayList<>();
         allLineString.addAll(pgLine);

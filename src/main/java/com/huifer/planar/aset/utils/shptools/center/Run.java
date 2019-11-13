@@ -2,19 +2,16 @@ package com.huifer.planar.aset.utils.shptools.center;
 
 
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
-import com.huifer.planar.aset.utils.shptools.triangulation.DelaunayTriangulator;
-import com.huifer.planar.aset.utils.shptools.triangulation.Triangle2D;
-import com.huifer.planar.aset.utils.shptools.triangulation.Triangle2DEnum;
-import com.huifer.planar.aset.utils.shptools.triangulation.Triangle2dTools;
-import com.huifer.planar.aset.utils.shptools.triangulation.Vector2D;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.huifer.planar.aset.utils.shptools.triangulation.*;
 import org.locationtech.jts.geom.Coordinate;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.MultiPolygon;
 import org.locationtech.jts.geom.Polygon;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * <p>Title : Run </p>
@@ -300,18 +297,6 @@ public class Run {
         return (coordinates[1].y - coordinates[0].y) / (coordinates[1].x - coordinates[0].x);
     }
 
-
-    /***
-     * @param n
-     * @param x
-     * @param y
-     * @return
-     */
-    private double ali(int n, double x, double y) {
-        return (n * (x * y) - x * y) / (n * x * x - x * x);
-    }
-
-
     /***
      * @param oi Oe 面积的索引
      * @param oeArea Oe面积列表
@@ -327,7 +312,6 @@ public class Run {
 
     }
 
-
     /***
      * 三边中心
      * @param a
@@ -339,7 +323,6 @@ public class Run {
 
         return new double[]{(a.x + b.x) / 2, (a.y + b.y) / 2};
     }
-
 
     /***
      * 三角形重心计算
@@ -353,6 +336,16 @@ public class Run {
         double gravityY = (a.y + b.y + c.y) / 3;
         double[] result = new double[]{gravityX, gravityY};
         return result;
+    }
+
+    /***
+     * @param n
+     * @param x
+     * @param y
+     * @return
+     */
+    private double ali(int n, double x, double y) {
+        return (n * (x * y) - x * y) / (n * x * x - x * x);
     }
 
 

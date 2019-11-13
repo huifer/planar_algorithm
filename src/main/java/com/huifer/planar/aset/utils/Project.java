@@ -24,7 +24,8 @@ public class Project {
 
     /**
      * 仿射转换
-     * @param lon  经度
+     *
+     * @param lon 经度
      * @param lat 纬度
      */
     public static void affine(double lon, double lat) {
@@ -56,7 +57,7 @@ public class Project {
      * @throws TransformException
      */
     public static Point projectTransform(double lon, double lat,
-            String epsgSource, String epsgTarget) throws FactoryException,
+                                         String epsgSource, String epsgTarget) throws FactoryException,
             MismatchedDimensionException, TransformException {
 
         Point sourcePoint = new GeometryFactory().createPoint(new Coordinate(lat, lon));

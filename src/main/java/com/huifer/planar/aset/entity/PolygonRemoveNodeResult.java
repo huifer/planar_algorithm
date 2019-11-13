@@ -2,9 +2,6 @@ package com.huifer.planar.aset.entity;
 
 import com.huifer.planar.aset.algo.impl.polygon.PolygonRemoveNodeByLength.PointWithPolygon;
 import com.huifer.planar.aset.algo.impl.polygon.PolygonRemoveNodeByLength.PolygonEditor;
-import java.util.List;
-import java.util.Set;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +9,9 @@ import lombok.ToString;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
+
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>Title : PolygonRemoveNodeResult </p>

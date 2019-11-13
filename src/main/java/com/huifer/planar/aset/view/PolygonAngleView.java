@@ -7,14 +7,13 @@ import com.huifer.planar.aset.entity.PolygonAngleResult;
 import com.huifer.planar.aset.view.base.BaseFrame;
 import com.huifer.planar.aset.view.base.FrameContext;
 import com.huifer.planar.aset.view.base.ViewHelper;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Shape;
-import java.util.HashMap;
-import java.util.List;
 import org.locationtech.jts.awt.ShapeWriter;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.ParseException;
+
+import java.awt.*;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * <p>Title : PolygonAngleView </p>

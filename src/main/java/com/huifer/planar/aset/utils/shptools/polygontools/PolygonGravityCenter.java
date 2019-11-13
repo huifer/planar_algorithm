@@ -1,8 +1,12 @@
 package com.huifer.planar.aset.utils.shptools.polygontools;
 
-import java.util.*;
-import java.util.stream.Collectors;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * <p>Title : PolygonGravityCenter </p>

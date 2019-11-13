@@ -1,14 +1,15 @@
 package com.huifer.planar.aset.algo.impl.concave;
 
 import com.huifer.planar.aset.utils.CommonUtils;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CutPolygonTest {
 

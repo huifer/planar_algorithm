@@ -18,7 +18,7 @@ public class RunT {
                 "E:\\mck\\planar_algorithm\\src\\main\\java\\com\\huifer\\planar\\aset\\mappingalgo\\coortrans\\坐标数据.txt");
         AllData allData = readHelper.getData();
 //        System.out.println("============= 输入值 =============");
-      log.info("{}","============= 输入值 =============");
+        log.info("{}", "============= 输入值 =============");
         printdata(allData);
 
         //BLH -> XYZ
@@ -35,7 +35,7 @@ public class RunT {
             allData.data.get(i).z = cartesian[2];
         }
 //        System.out.println("============= 大地坐标转笛卡尔坐标系 =============");
-        log.info("{}","============= 大地坐标转笛卡尔坐标系 =============");
+        log.info("{}", "============= 大地坐标转笛卡尔坐标系 =============");
 
         printdata(allData);
 
@@ -48,7 +48,7 @@ public class RunT {
             allData.data.get(i).gsy = xy[1];
         }
 //        System.out.println("============= 大地坐标转高斯 =============");
-        log.info("{}","============= 大地坐标转高斯 =============");
+        log.info("{}", "============= 大地坐标转高斯 =============");
         printdata(allData);
     }
 
@@ -56,7 +56,7 @@ public class RunT {
         allData.data.stream().forEach(
                 so -> {
 //                    System.out.println(so);
-                    log.info("{}",so);
+                    log.info("{}", so);
                 }
         );
     }
@@ -68,7 +68,7 @@ public class RunT {
             String x = Rad2Dms.rad2Str(pointInfo.b);
             String y = Rad2Dms.rad2Str(pointInfo.l);
 //            System.out.println(name + " | " + x + " | " + y);
-            log.info("{}\t{}\t{}\t",name,x,y);
+            log.info("{}\t{}\t{}\t", name, x, y);
         }
     }
 

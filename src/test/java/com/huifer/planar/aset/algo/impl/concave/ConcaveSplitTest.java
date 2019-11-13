@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.algo.impl.concave;
 
 import com.huifer.planar.aset.algo.impl.concave.ConcaveSplit.TroughLineWithSort;
-import java.util.List;
 import org.junit.Test;
 import org.locationtech.jts.geom.Geometry;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.Polygon;
 import org.locationtech.jts.io.WKTReader;
+
+import java.util.List;
 
 public class ConcaveSplitTest {
 

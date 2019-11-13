@@ -3,19 +3,16 @@ package com.huifer.planar.aset.algo.impl;
 import com.huifer.planar.aset.algo.AverageWidthAverageLength;
 import com.huifer.planar.aset.entity.FourBox;
 import com.huifer.planar.aset.utils.shptools.overlay.Operation;
+import lombok.extern.slf4j.Slf4j;
+import org.geotools.geometry.jts.JTSFactoryFinder;
+import org.locationtech.jts.geom.*;
+import org.locationtech.jts.io.ParseException;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.extern.slf4j.Slf4j;
-import org.geotools.geometry.jts.JTSFactoryFinder;
-import org.locationtech.jts.geom.Coordinate;
-import org.locationtech.jts.geom.Geometry;
-import org.locationtech.jts.geom.GeometryFactory;
-import org.locationtech.jts.geom.LineString;
-import org.locationtech.jts.geom.Polygon;
-import org.locationtech.jts.io.ParseException;
 
 /**
  * <p>Title : AverageWidthAverageLengthImpl </p>
@@ -135,7 +132,7 @@ public class AverageWidthAverageLengthImpl implements AverageWidthAverageLength 
                 Geometry intersection = polygonByWKT.intersection(ccc);
                 length.add(intersection.getLength());
             }
-            log.info("长度 {}",length);
+            log.info("长度 {}", length);
             double asDouble = length.stream().mapToDouble(Double::doubleValue).average()
                     .getAsDouble();
             return asDouble;

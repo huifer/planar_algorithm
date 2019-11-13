@@ -1,12 +1,13 @@
 package com.huifer.planar.aset.utils.geo;
 
-import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.geotools.data.simple.SimpleFeatureCollection;
 import org.geotools.data.simple.SimpleFeatureIterator;
 import org.junit.Test;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
+
+import java.io.IOException;
 
 @Slf4j
 public class GeoJsonUtilTest {

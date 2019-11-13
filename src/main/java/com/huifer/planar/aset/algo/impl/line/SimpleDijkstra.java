@@ -2,6 +2,7 @@ package com.huifer.planar.aset.algo.impl.line;
 
 import com.huifer.planar.aset.algo.DijlstraInterface;
 import com.huifer.planar.aset.entity.ResultShortestPath;
+
 import java.util.ArrayList;
 
 /**
@@ -17,7 +18,7 @@ public class SimpleDijkstra implements DijlstraInterface {
      */
     @Override
     public final ResultShortestPath shortestPathByStartAndEnd(ArrayList<ArrayList<Double>> cost,
-            int startPoint, int endPoint) {
+                                                              int startPoint, int endPoint) {
 
         ResultShortestPath resultShortestPath = new ResultShortestPath();
 

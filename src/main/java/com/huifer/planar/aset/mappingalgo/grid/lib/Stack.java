@@ -22,6 +22,7 @@ public class Stack {
 
     /**
      * 向点集追加数据返回总量
+     *
      * @param pointInfo
      * @return
      */
@@ -35,7 +36,7 @@ public class Stack {
      * 删除一个点 返回点信息
      * @return
      */
-    public PointInfo popStack(){
+    public PointInfo popStack() {
         PointInfo p = data.get(top);
         data.remove(p);
         top--;

@@ -1,11 +1,5 @@
 package com.huifer.planar.aset.utils;
 
-import java.net.URLEncoder;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import org.codehaus.jackson.JsonGenerator;
 import org.codehaus.jackson.JsonParser;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -14,6 +8,13 @@ import org.codehaus.jackson.map.ser.FilterProvider;
 import org.codehaus.jackson.map.ser.impl.SimpleBeanPropertyFilter;
 import org.codehaus.jackson.map.ser.impl.SimpleFilterProvider;
 import org.codehaus.jackson.map.type.TypeFactory;
+
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <p>Title : JSONUtil </p>
@@ -74,6 +75,7 @@ public class JSONUtil {
 
     /**
      * utf8 编码 json
+     *
      * @param obj obj
      * @return json字符串
      * @throws Exception
@@ -94,6 +96,7 @@ public class JSONUtil {
 
     /**
      * vo2json
+     *
      * @param vo
      * @param hidePropertys
      * @return
@@ -128,7 +131,7 @@ public class JSONUtil {
 
     @Deprecated
     public static String toJson(List<?> voList,
-            String... hidePropertys) throws Exception {
+                                String... hidePropertys) throws Exception {
 
         String json = "";
 
