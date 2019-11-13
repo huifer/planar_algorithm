@@ -1,15 +1,14 @@
 package com.huifer.planar.aset.utils.polygonselect;
 
 
-import static com.huifer.planar.aset.utils.polygonselect.ReadShpHelper.gc;
-import static com.huifer.planar.aset.utils.polygonselect.ReadShpHelper.polygon2Line;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.locationtech.jts.geom.LineString;
 import org.locationtech.jts.geom.Point;
+
+import static com.huifer.planar.aset.utils.polygonselect.ReadShpHelper.*;
 
 /**
  * <p>Title : Algo </p>

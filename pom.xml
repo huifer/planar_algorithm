@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.huifer</groupId>
@@ -16,6 +16,12 @@
   </properties>
   <dependencies>
 
+    <!-- https://mvnrepository.com/artifact/jama/jama -->
+    <dependency>
+      <groupId>gov.nist.math</groupId>
+      <artifactId>jama</artifactId>
+      <version>1.0.2</version>
+    </dependency>
 
     <!--geotools-->
     <!-- https://mvnrepository.com/artifact/org.locationtech.jts/jts-core -->
@@ -91,9 +97,9 @@
     <!-- https://mvnrepository.com/artifact/com.vividsolutions/jts -->
     <!-- 保留值-->
     <dependency>
-    <groupId>com.vividsolutions</groupId>
-    <artifactId>jts</artifactId>
-    <version>1.13</version>
+      <groupId>com.vividsolutions</groupId>
+      <artifactId>jts</artifactId>
+      <version>1.13</version>
     </dependency>
 
 
